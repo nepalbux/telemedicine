@@ -1,895 +1,384 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>PTC Nepal | Complete web development Service from Pokhara</title>
-    <link rel="icon" href="https://media-hosting.imagekit.io/d6cdfe076f0a4de9/favicon.ico?Expires=1839342735&Key-Pair-Id=K2ZIVPTIP2VGHC&Signature=qikqGNJGlgOlcp5kSYmKnpohzxAaxrF7G5bXFumHDTy89K3fJPIVIF1aYG-Ko1repcnQl66EQzPE3GjYR3pNANiyNuDXedLGeLwYvBO11kG2Dda-nvjgbtBh2Qzys37BVlVXvpbBaDyATlWVWiwuAKvYm9VjSlKG6MQf0IlLfAGiWkC~un2UDpDhPe9VqPOXVqDlb9Fpc6J9gWiAhdpcJNgTKnVwJ5L~JrlH6Id~cK98TcOVlGngfNMOpsBz-DMp76hcKJ7jQZvxXzjuDWA16PJrqsMDtei82nQL8QEvNf9mfd0KyN7OsjHUUi7AE4r5jLUbY5c2DDYIo-8jabxH3w__" type="image/x-icon">
-    <meta name="description" content="Trusted web development services in Pokhara offering  website and mobile app development services. Call us anytime!">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    <script src="https://cdn.tailwindcss.com"></script>
-    <script>
-        tailwind.config = {
-            theme: {
-                extend: {
-                    colors: {
-                        primary: '#0066cc',
-                        secondary: '#003366',
-                        accent: '#ff6600',
-                        light: '#f8f9fa',
-                        dark: '#212529',
-                    },
-                    fontFamily: {
-                        sans: ['Roboto', 'sans-serif'],
-                        heading: ['Montserrat', 'sans-serif'],
-                    },
-                }
-            }
-        }
-    </script>
-    <style>
-        /* Custom CSS */
-        .hero-section {
-            position: relative;
-            height: 100vh;
-            min-height: 600px;
-            overflow: hidden;
-        }
-        
-        .hero-video {
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 90%;
-            height:100%;
-            object-fit: cover;
-            z-index: 0;
-        }
-        
-        .hero-overlay {
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 90%;
-            height: 100%;
-            background-color: rgba(0, 0, 0, 0.1);
-            z-index: 1;
-        }
-        
-        .hero-content {
-            position: relative;
-            z-index: 10;
-            padding-top: 20px;
-        }
-        
-        .service-card:hover {
-            transform: translateY(-10px);
-            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
-        }
-        
-        .testimonial-card {
-            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
-            transition: all 0.3s ease;
-        }
-        
-        .testimonial-card:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.15);
-        }
-        
-        .nav-link::after {
-            content: '';
-            display: block;
-            width: 0;
-            height: 2px;
-            background: #ff6600;
-            transition: width 0.3s;
-        }
-        
-        .nav-link:hover::after {
-            width: 100%;
-        }
-        
-        /* Animation for hero text */
-        @keyframes fadeIn {
-            from { opacity: 0; transform: translateY(20px); }
-            to { opacity: 1; transform: translateY(0); }
-        }
-        
-        .animate-fade-in {
-            animation: fadeIn 1s ease-out forwards;
-        }
-        
-        /* Mobile menu animation */
-        .mobile-menu {
-            transition: all 0.3s ease;
-            max-height: 0;
-            overflow: hidden;
-        }
-        
-        .mobile-menu.open {
-            max-height: 500px;
-        }
-        
-        /* Tap target sizing for mobile */
-        .tap-target {
-            min-height: 48px;
-            min-width: 48px;
-        }
-        
-        /* Prevent zoom on input focus */
-        @media screen and (max-width: 767px) {
-            input, select, textarea {
-                font-size: 16px !important;
-            }
-        }
-    </style>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>PTC Nepal | Digital Creator</title>
+  <!-- Favicon -->
+  <link rel="icon" href="https://ik.imagekit.io/70al5xvi0/logo.jpg?updatedAt=1751367294161" type="image/jpeg">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;700;900&family=Inter:wght@400;500&family=Manrope:wght@400;700&family=Galada&display=swap" rel="stylesheet">
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+  <script type="module" src="https://unpkg.com/@google/model-viewer/dist/model-viewer.min.js"></script>
+  <style>
+    * { margin:0; padding:0; box-sizing:border-box; }
+    body {
+      font-family: 'Inter', sans-serif;
+      background: radial-gradient(circle at center, #0b8a78 0%, #044e3b 50%, #011411 100%);
+      color: #fff;
+      overflow: hidden;
+      height: 100vh;
+      transition: background 1.2s cubic-bezier(0.4,0,0.2,1);
+    }
+    body.blue-theme {
+      --bg-inner: #0b4f8a;
+      --bg-mid: #04294e;
+      --bg-outer: #010c14;
+      background: radial-gradient(circle at center, var(--bg-inner) 0%, var(--bg-mid) 50%, var(--bg-outer) 100%);
+    }
+    /* bubbles */
+    #bubbles-container { position:fixed; top:0; left:0; width:100%; height:100%; pointer-events:none; z-index:0; overflow:hidden; }
+    .bubble-img { position:absolute; pointer-events:none; }
+    @keyframes floatUpImg {
+      0% { transform:translateY(0) translateX(0) rotate(0deg); opacity:0; }
+      10% { opacity:0.4; }
+      90% { opacity:0.4; }
+      100% { transform:translateY(-110vh) translateX(30px) rotate(360deg); opacity:0; }
+    }
+    /* header */
+    .header { display:flex; justify-content:space-between; align-items:center; padding:1.5rem 4%; position:fixed; top:0; width:100%; z-index:100; background:rgba(0,0,0,0.2); backdrop-filter:blur(8px); }
+    .logo { display:flex; align-items:center; gap:0.5rem; font-weight:700; font-size:1.2rem; font-family:'Galada',cursive; }
+    .logo img { height:36px; width:auto; border-radius:8px; }
+    .nav { display:flex; gap:0.3rem; background:rgba(255,255,255,0.06); padding:0.3rem; border-radius:100px; border:1px solid rgba(255,255,255,0.15); backdrop-filter:blur(12px); }
+    .nav-item { font-family:'Manrope',sans-serif; color:rgba(255,255,255,0.7); text-decoration:none; font-size:0.8rem; font-weight:500; padding:0.4rem 1rem; border-radius:100px; transition:0.3s; cursor:pointer; }
+    .nav-item:hover, .nav-item.active { background:#fbcfe8; color:#011d17; }
+    .contact-btn { background:rgba(0,0,0,0.5); color:white; border:none; padding:0.6rem 1.6rem; border-radius:100px; font-weight:600; font-size:0.85rem; cursor:pointer; transition:0.3s; }
+    .contact-btn:hover { background:rgba(0,0,0,0.7); transform:translateY(-2px); }
+    /* hero */
+    .hero { height:100vh; display:flex; align-items:center; justify-content:center; padding:0 4%; padding-top:5rem; position:relative; }
+    .hero-content { display:flex; justify-content:space-between; width:100%; max-width:100%; height:100%; position:relative; }
+    .main-title, .side-title { font-family:'Galada',cursive; font-size:clamp(4.5rem, 10vw, 10rem); line-height:0.8; font-weight:400; color:white; white-space:nowrap; }
+    .outline { color:white; }
+    /* leaves */
+    .leaves-container { position:absolute; top:0; left:0; width:100%; height:100%; pointer-events:none; z-index:-1; transition:transform 0.1s; }
+    .leaf { position:absolute; width:60px; height:60px; pointer-events:none; z-index:-1; filter:drop-shadow(0 5px 15px rgba(0,0,0,0.2)); }
+    .l1 { top:10%; left:15%; }
+    .l2 { top:40%; left:80%; width:140px; height:140px; opacity:0.4; }
+    .l3 { top:70%; left:75%; width:80px; height:80px; }
+    .l4 { top:85%; left:20%; width:120px; height:120px; opacity:0.3; }
+    /* left column */
+    .hero-left { display:flex; flex-direction:column; height:100%; padding:6rem 0; gap:1.5rem; z-index:100; width:40%; }
+    .description { color:rgba(255,255,255,0.8); font-size:1rem; line-height:1.6; max-width:400px; }
+    .primary-btn { display:flex; align-items:center; gap:1.5rem; background:rgba(0,0,0,0.5); color:white; border:none; padding:0.3rem 0.3rem 0.3rem 1.5rem; border-radius:100px; font-weight:700; cursor:pointer; width:fit-content; transition:0.3s; }
+    .primary-btn:hover { background:rgba(0,0,0,0.7); transform:translateY(-3px); }
+    .plus-icon { background:#fbcfe8; color:#011d17; width:38px; height:38px; display:flex; align-items:center; justify-content:center; border-radius:50%; font-size:1.4rem; font-weight:900; border:none; }
+    .award-badge { display:flex; align-items:center; gap:1rem; margin-top:auto; }
+    .award-icon { width:48px; height:48px; background:rgba(255,255,255,0.05); border:1px solid rgba(255,255,255,0.1); border-radius:12px; display:flex; align-items:center; justify-content:center; }
+    .award-title { font-size:0.7rem; letter-spacing:0.1em; color:rgba(255,255,255,0.6); }
+    .award-subtitle { font-size:0.85rem; font-weight:600; }
+    /* berries containers */
+    .berries-container, .berries-container-bg { position:absolute; top:0; left:0; width:100%; height:100%; pointer-events:none; z-index:110; transition:transform 0.1s; }
+    .berries-container-bg { z-index:0; }
+    .berry { position:absolute; width:120px; height:120px; filter:drop-shadow(0 10px 20px rgba(0,0,0,0.3)); transition:transform 0.8s cubic-bezier(0.2,0.8,0.2,1); }
+    .b1 { top:25%; left:30%; width:220px; height:220px; }
+    .b2 { top:60%; left:42%; width:100px; height:100px; }
+    .b3 { top:30%; left:62%; width:250px; height:250px; }
+    .b4 { top:15%; left:48%; width:140px; height:140px; }
+    .b5 { top:75%; left:20%; width:120px; height:120px; }
+    .b6 { top:45%; left:75%; width:180px; height:180px; }
+    .b7 { top:15%; left:40%; width:80px; height:80px; opacity:0.7; }
+    .b8 { top:50%; left:55%; width:70px; height:70px; opacity:0.6; }
+    .b9 { top:80%; left:35%; width:75px; height:75px; opacity:0.7; }
+    /* 3D product */
+    .hero-center { display:flex; justify-content:center; align-items:center; position:absolute; top:0; left:0; width:100%; height:100%; z-index:1; opacity:0; animation:fadeIn 1.5s ease-out 0.3s forwards; pointer-events:none; background:radial-gradient(circle at center, rgba(16,185,129,0.08) 0%, transparent 70%); }
+    @keyframes fadeIn { to { opacity:1; } }
+    .main-product-3d { width:80vw; height:80vh; outline:none; --progress-bar-color:transparent; --poster-color:transparent; z-index:1; position:fixed; top:50%; left:50%; transform:translate(-50%,-50%) rotate(25deg); pointer-events:none; }
+    .main-product-3d[camera-controls] { pointer-events:auto; }
+    /* right column */
+    .hero-right { display:flex; flex-direction:column; justify-content:space-between; align-items:flex-end; text-align:right; height:100%; padding:6rem 0; z-index:100; width:35%; pointer-events:none; }
+    .product-carousel { display:flex; flex-direction:column; gap:1.5rem; align-items:flex-end; pointer-events:auto; width:100%; }
+    .carousel-cards { display:flex; gap:1rem; justify-content:flex-end; flex-wrap:wrap; }
+    .card { background:rgba(255,255,255,0.05); border:1px solid rgba(255,255,255,0.1); padding:1rem; padding-top:4rem; border-radius:28px; display:flex; flex-direction:column; align-items:center; gap:1rem; cursor:pointer; transition:0.4s cubic-bezier(0.175,0.885,0.32,1.275); width:130px; backdrop-filter:blur(8px); text-align:center; }
+    .card:hover { background:rgba(255,255,255,0.12); border-color:rgba(255,255,255,0.4); }
+    .card.active { border-color:#fbcfe8; border-width:1px; background:rgba(255,255,255,0.08); }
+    .card img { width:120px; height:auto; margin-top:-6rem; filter:drop-shadow(0 20px 35px rgba(0,0,0,0.5)); transition:transform 0.5s cubic-bezier(0.34,1.56,0.64,1); pointer-events:none; }
+    .card:hover img { transform:translateY(-20px) rotate(-8deg) scale(1.1); }
+    .card-info { display:flex; flex-direction:column; font-size:0.7rem; width:100%; }
+    .card-info span:first-child { font-weight:600; }
+    .card-info span:last-child { color:rgba(255,255,255,0.6); }
+    .carousel-nav { display:flex; gap:0.8rem; }
+    .nav-arrow { background:rgba(255,255,255,0.06); border:1px solid rgba(255,255,255,0.15); color:white; width:36px; height:36px; border-radius:50%; cursor:pointer; display:flex; align-items:center; justify-content:center; transition:0.3s; }
+    .nav-arrow:hover { background:rgba(255,255,255,0.15); }
+    .side-title { align-self:flex-end; text-align:right; }
+    /* modal overlay */
+    .modal-overlay { position:fixed; top:0; left:0; width:100%; height:100%; background:rgba(0,0,0,0.7); backdrop-filter:blur(8px); z-index:999; display:none; align-items:center; justify-content:center; }
+    .modal-content { background:#1a1a1a; padding:2.5rem; border-radius:32px; max-width:500px; width:90%; color:white; border:1px solid rgba(255,255,255,0.1); box-shadow:0 30px 60px rgba(0,0,0,0.6); }
+    .modal-content h2 { font-family:'Galada',cursive; font-size:2rem; margin-bottom:0.5rem; }
+    .modal-content p { color:rgba(255,255,255,0.7); line-height:1.6; margin-bottom:1.5rem; }
+    .modal-close { background:#fbcfe8; color:#011d17; border:none; padding:0.5rem 1.5rem; border-radius:100px; font-weight:600; cursor:pointer; }
+    /* responsive */
+    @media (max-width:1200px) { .main-product-3d { width:100vw; height:60vh; top:40%; } .hero-left { width:50%; } .hero-right { width:40%; } }
+    @media (max-width:900px) { .hero-left { width:100%; padding:4rem 0; } .hero-right { display:none; } .main-title { font-size:4rem; } .description { max-width:100%; } }
+  </style>
 </head>
-<body class="font-sans bg-light">
-    <!-- Header -->
-    <header class="bg-white shadow-md fixed w-full z-5">
-        <div class="container mx-auto px-4 py-3 flex justify-between items-center">
-            <div class="flex items-center">
-                <div class="mr-3 text-primary text-3xl">
-                    <a href="#" class="flex items-center gap-2 text-2xl font-['architectural'] text-primary" onclick="window.scrollTo({top: 0, behavior: 'smooth'})">
-                     <img src="https://ik.imagekit.io/70al5xvi0/logo.jpg?updatedAt=1751367294161" alt="Logo" class="w-10  h-10">
-                </div>
-                <a href="#" class="text-2xl md:text-3xl font-bold text-primary">
-                    <span class="text-accent">PTC </span> Nepal
-                </a>
-            </div>
-            
-            <div class="hidden md:flex space-x-6 items-center">
-                <a href="#" class="nav-link text-dark hover:text-accent transition">Home</a>
-                <a href="#services" class="nav-link text-dark hover:text-accent transition">Services</a>
-                <a href="#about" class="nav-link text-dark hover:text-accent transition">About</a>
-                <a href="#testimonials" class="nav-link text-dark hover:text-accent transition">Testimonials</a>
-                <a href="#contact" class="nav-link text-dark hover:text-accent transition">Contact</a>
-                <a href="tel:+9779856020179" class="bg-green-600 text-white px-4 py-2 rounded-lg hover:bg-accent transition flex items-center tap-target">
-                    <i class="fas fa-phone mr-2"></i> +977 9856020179
-                </a>
-            </div>
-            
-            <button id="menu-toggle" class="md:hidden text-2xl text-dark tap-target" aria-label="Toggle menu">
-                <i class="fas fa-bars"></i>
-            </button>
-        </div>
-        
-        <!-- Mobile Menu -->
-        <div id="mobile-menu" class="mobile-menu md:hidden bg-white shadow-lg absolute w-full z-50">
-            <div class="container mx-auto px-4 py-3 flex flex-col">
-                <a href="#" class="py-3 text-dark hover:text-accent border-b border-gray-100 tap-target">Home</a>
-                <a href="#services" class="py-3 text-dark hover:text-accent border-b border-gray-100 tap-target">Services</a>
-                <a href="#about" class="py-3 text-dark hover:text-accent border-b border-gray-100 tap-target">About</a>
-                <a href="#testimonials" class="py-3 text-dark hover:text-accent border-b border-gray-100 tap-target">Testimonials</a>
-                <a href="#contact" class="py-3 text-dark hover:text-accent border-b border-gray-100 tap-target">Contact</a>
-                <a href="tel:+9779856020179" class="bg-accent text-white px-4 py-3 rounded-lg hover:bg-orange-700 transition my-2 text-center tap-target">
-                    <i class="fas fa-phone mr-2"></i> Call Now
-                </a>
-            </div>
-        </div>
-    </header>
+<body>
+  <div id="bubbles-container"></div>
 
-    <!-- Hero Section with Video Background -->
-    <section class="hero-section">
-        <video autoplay muted loop class="hero-video">
-            <source src="https://ik.imagekit.io/70al5xvi0/Generated%20video%201.mp4?updatedAt=1748008420580" type="video/mp4">
-            Your browser does not support the video tag.
-        </video>
-        <div class="hero-overlay"></div>
-        <div class="hero-content flex items-center justify-center h-full text-white">
-            <div class="container mx-auto px-4 text-center">
-                <h1 class="text-3xl md:text-5xl lg:text-6xl font-bold mb-6 animate-fade-in">
-                    <span class="text-accent"> Professional</span> website development Services from <span class="text-accent"> Pokhara</span>
-                </h1>
-                <p class="text-lg md:text-xl lg:text-2xl mb-8 max-w-2xl mx-auto animate-fade-in" style="animation-delay: 0.3s;">
-                    Building stunning, responsive website and mobile app that grows your brand and connect you with your audience online.
-                </p>
-                <div class="flex flex-col md:flex-row justify-center gap-4 md:gap-6 animate-fade-in" style="animation-delay: 0.6s;">
-                    <a href="#contact" class="bg-accent hover:bg-orange-700 text-white px-6 py-3 rounded-lg text-lg font-semibold transition flex items-center justify-center tap-target">
-                        <i class="fas fa-envelope mr-2"></i> Get a Free Quote
-                    </a>
-                    <a href="tel:+9779856020179" class="bg-primary hover:bg-blue-700 text-white px-6 py-3 rounded-lg text-lg font-semibold transition flex items-center justify-center tap-target">
-                        <i class="fas fa-phone mr-2"></i> Call Now
-                    </a>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Services Section -->
-    <section id="services" class="py-16 bg-white">
-        <div class="container mx-auto px-4">
-            <div class="text-center mb-12">
-                <h2 class="text-3xl md:text-4xl font-bold mb-4 text-secondary">Our web development Services</h2>
-                <div class="w-20 h-1 bg-accent mx-auto mb-6"></div>
-                <p class="text-lg text-purple-400 max-w-3xl mx-auto">
-                    We offer a comprehensive range of IT services to meet all your personal and business technology needs.
-                </p>
-            </div>
-            
-            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-                <!-- Service 1 -->
-                <a href="Register-Domain.html" class="service-card bg-light rounded-lg overflow-hidden shadow-md transition duration-300 block">
-                    <div class="h-48 bg-primary flex items-center justify-center text-6xl text-orange-400">
-                        <i class="fas fa-domain"></i>
-                    </div>
-                    <div class="p-6">
-                        <h3 class="text-xl font-bold mb-3 text-secondary">Domain Registration</h3>
-                        <p class="text-dark mb-4">
-                            Domain registration is the process of purchasing a unique website name (URL) through a domain registrar for online identification and access.
-                        </p>
-                        <span class="text-accent font-semibold hover:underline transition">
-                            Register Domain <i class="fas fa-arrow-right ml-1"></i>
-                        </span>
-                    </div>
-                </a>
-                
-                <!-- Service 2 -->
-                <a href="develop-website.html" class="service-card bg-light rounded-lg overflow-hidden shadow-md transition duration-300 block">
-                    <div class="h-48 bg-primary flex items-center justify-center text-6xl text-orange-500">
-                        <i class="fas fa-website"></i>
-                    </div>
-                    <div class="p-6">
-                        <h3 class="text-xl font-bold mb-3 text-secondary">Website Development</h3>
-                        <p class="text-dark mb-4">
-                            Website development involves designing, coding, testing, and launching websites, focusing on user experience, responsiveness, performance, SEO, and functionality
-                        </p>
-                        <span class="text-accent font-semibold hover:underline transition">
-                            Develop Your Website <i class="fas fa-arrow-right ml-1"></i>
-                        </span>
-                    </div>
-                </a>
-                
-                <!-- Service 3 -->
-                <a href="Mobile-App.html" class="service-card bg-light rounded-lg overflow-hidden shadow-md transition duration-300 block">
-                    <div class="h-48 bg-primary flex items-center justify-center text-6xl text-red-600">
-                        <i class="fas fa-mobile"></i>
-                    </div>
-                    <div class="p-6">
-                        <h3 class="text-xl font-bold mb-3 text-secondary">Mobile App Development</h3>
-                        <p class="text-dark mb-4">
-                            Mobile app development involves designing, coding, testing, and deploying applications for Android and iOS, ensuring performance, usability, and responsiveness.
-                        </p>
-                        <span class="text-accent font-semibold hover:underline transition">
-                            Build Your App <i class="fas fa-arrow-right ml-1"></i>
-                        </span>
-                    </div>
-                </a>
-                
-                <!-- Service 4 -->
-                <a href="Hosting-services.html" class="service-card bg-light rounded-lg overflow-hidden shadow-md transition duration-300 block">
-                    <div class="h-48 bg-primary flex items-center justify-center text-6xl text-green-300">
-                        <i class="fas fa-hosting"></i>
-                    </div>
-                    <div class="p-6">
-                        <h3 class="text-xl font-bold mb-3 text-secondary">Hosting Service</h3>
-                        <p class="text-dark mb-4">
-                            Hosting service provides space on a server to store website files, making them accessible online via the internet for users worldwide.
-                        </p>
-                        <span class="text-accent font-semibold hover:underline transition">
-                            Buy Hosting Package <i class="fas fa-arrow-right ml-1"></i>
-                        </span>
-                    </div>
-                </a>
-                
-                <!-- Service 5 -->
-                <a href="Social-Page-Manage.html" class="service-card bg-light rounded-lg overflow-hidden shadow-md transition duration-300 block">
-                    <div class="h-48 bg-primary flex items-center justify-center text-6xl text-green-400">
-                        <i class="fas fa-social media"></i>
-                    </div>
-                    <div class="p-6">
-                        <h3 class="text-xl font-bold mb-3 text-secondary">Social Media Management</h3>
-                        <p class="text-dark mb-4">
-                            Social media management involves creating, scheduling, analyzing, and engaging with content on platforms like Facebook, Instagram, and Twitter to grow online presence.
-                        </p>
-                        <span class="text-accent font-semibold hover:underline transition">
-                            Manage Your Social Media <i class="fas fa-arrow-right ml-1"></i>
-                        </span>
-                    </div>
-                </a>
-                
-                <!-- Service 6 -->
-                <a href="Develop-Software.html" class="service-card bg-light rounded-lg overflow-hidden shadow-md transition duration-300 block">
-                    <div class="h-48 bg-primary flex items-center justify-center text-6xl text-green-600">
-                        <i class="fas fa-software"></i>
-                    </div>
-                    <div class="p-6">
-                        <h3 class="text-xl font-bold mb-3 text-secondary">Software Development</h3>
-                        <p class="text-dark mb-4">
-                            Software development is the process of designing, coding, testing, and maintaining applications or systems to meet user or business requirements efficiently.
-                        </p>
-                        <span class="text-accent font-semibold hover:underline transition">
-                            Order For Development <i class="fas fa-arrow-right ml-1"></i>
-                        </span>
-                    </div>
-                </a>
-            </div>
-            
-            <div class="text-center mt-12">
-                <a href="#contact" class="bg-accent hover:bg-orange-700 text-white px-8 py-3 rounded-lg text-lg font-semibold transition inline-flex items-center tap-target">
-                    <i class="fas fa-envelope mr-2"></i> Get a Custom Quote for Your Project
-                </a>
-            </div>
-        </div>
-    </section>
-
-    <!-- About Section -->
-    <section id="about" class="py-16 bg-gray-50">
-        <div class="container mx-auto px-4">
-            <div class="flex flex-col lg:flex-row items-center gap-12">
-                <div class="lg:w-1/2">
-                    <div class="relative h-96 w-full rounded-lg overflow-hidden shadow-lg">
-                        <img src="https://images.unsplash.com/photo-1605152276897-4f618f831968?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80" 
-                             alt="Auto mechanic at work" 
-                             class="w-full h-full object-cover">
-                        <div class="absolute inset-0 bg-gradient-to-t from-primary/80 to-transparent flex items-end p-6">
-                            <div class="text-white">
-                                <h3 class="text-xl font-bold">12+ Years Experience</h3>
-                                <p>"Delivering modern and reliable IT solutions since 2012."</p>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                
-                <div class="lg:w-1/2">
-                    <h2 class="text-2xl md:text-3xl font-bold mb-6 text-secondary">About PTC Nepal</h2>
-                    <p class="text-lg text-dark mb-6">
-                        Founded in 2012, PTC Nepal has been delivering exceptional web development services to individuals and businesses across Pokhara and beyond. Our team of skilled and dedicated developers is committed to providing high-quality digital solutions and outstanding customer support.
-                    </p>
-                    
-                    <div class="space-y-4 mb-8">
-                        <div class="flex items-start">
-                            <div class="text-accent mr-4 mt-1">
-                                <i class="fas fa-check-circle text-2xl"></i>
-                            </div>
-                            <div>
-                                <h4 class="text-lg font-semibold text-secondary">Certified & Experienced</h4>
-                                <p class="text-dark">Our developers are highly skilled and certified to ensure the best quality in every project.</p>
-                            </div>
-                        </div>
-                        
-                        <div class="flex items-start">
-                            <div class="text-accent mr-4 mt-1">
-                                <i class="fas fa-check-circle text-2xl"></i>
-                            </div>
-                            <div>
-                                <h4 class="text-lg font-semibold text-secondary">24/7 Transparent Pricing</h4>
-                                <p class="text-dark">No hidden costs – we provide clear and upfront pricing for all our web development services.</p>
-                            </div>
-                        </div>
-                        
-                        <div class="flex items-start">
-                            <div class="text-accent mr-4 mt-1">
-                                <i class="fas fa-check-circle text-2xl"></i>
-                            </div>
-                            <div>
-                                <h4 class="text-lg font-semibold text-secondary">24/7 Support</h4>
-                                <p class="text-dark">We offer round-the-clock technical support to keep your website running smoothly at all times.</p>
-                            </div>
-                        </div>
-                    </div>
-                    
-                    <a href="#contact" class="bg-primary hover:bg-blue-700 text-white px-6 py-3 rounded-lg text-lg font-semibold transition inline-flex items-center tap-target">
-                        <i class="fas fa-phone-alt mr-2"></i> Contact Us Today
-                    </a>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Why Choose Us Section -->
-    <section class="py-16 bg-primary text-white">
-        <div class="container mx-auto px-4">
-            <div class="text-center mb-12">
-                <h2 class="text-3xl md:text-4xl font-bold mb-4">Why Choose PTC Nepal?</h2>
-                <div class="w-20 h-1 bg-accent mx-auto mb-6"></div>
-                <p class="text-lg max-w-3xl mx-auto">
-                    We go above and beyond to ensure your complete satisfaction with every service we provide to support your business through digitization.
-                </p>
-            </div>
-            
-            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
-                <!-- Feature 1 -->
-                <div class="text-center p-6">
-                    <div class="text-5xl mb-4">
-                        <i class="fas fa-medal"></i>
-                    </div>
-                    <h3 class="text-xl font-bold mb-3">Quality Workmanship</h3>
-                    <p>
-                        We take pride in our work and stand behind every job we complete with our satisfaction guarantee.
-                    </p>
-                </div>
-                
-                <!-- Feature 2 -->
-                <div class="text-center p-6">
-                    <div class="text-5xl mb-4">
-                        <i class="fas fa-dollar-sign"></i>
-                    </div>
-                    <h3 class="text-xl font-bold mb-3">Fair Pricing</h3>
-                    <p>
-                        Competitive rates with no hidden fees. We provide upfront pricing before starting any work.
-                    </p>
-                </div>
-                
-                <!-- Feature 3 -->
-                <div class="text-center p-6">
-                    <div class="text-5xl mb-4">
-                        <i class="fas fa-clock"></i>
-                    </div>
-                    <h3 class="text-xl font-bold mb-3">Always On Time</h3>
-                    <p>
-                        We value your time. Our technicians experts arrive promptly at the scheduled time, to finalize your projects.
-                    </p>
-                </div>
-                
-                <!-- Feature 4 -->
-                <div class="text-center p-6">
-                    <div class="text-5xl mb-4">
-                        <i class="fas fa-headset"></i>
-                    </div>
-                    <h3 class="text-xl font-bold mb-3">24/7 Support</h3>
-                    <p>
-                        Our friendly customer service team is available around the clock to answer your questions.
-                    </p>
-                </div>
-                
-                <!-- Feature 5 -->
-                <div class="text-center p-6">
-                    <div class="text-5xl mb-4">
-                        <i class="fas fa-tools"></i>
-                    </div>
-                    <h3 class="text-xl font-bold mb-3">Modern Technology</h3>
-                    <p>
-                        We use state-of-the-art technology to diagnose and solve development issues efficiently.
-                    </p>
-                </div>
-                
-                <!-- Feature 6 -->
-                <div class="text-center p-6">
-                    <div class="text-5xl mb-4">
-                        <i class="fas fa-star"></i>
-                    </div>
-                    <h3 class="text-xl font-bold mb-3">5-Star Service</h3>
-                    <p>
-                        Our many satisfied customers consistently rate us 5 stars for our professionalism and expertise.
-                    </p>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Testimonials Section -->
-    <section id="testimonials" class="py-16 bg-white">
-        <div class="container mx-auto px-4">
-            <div class="text-center mb-12">
-                <h2 class="text-3xl md:text-4xl font-bold mb-4 text-secondary">What Our Customers Say</h2>
-                <div class="w-20 h-1 bg-accent mx-auto mb-6"></div>
-                <p class="text-lg text-dark max-w-3xl mx-auto">
-                    Don't just take our word for it - hear from our satisfied customers throughout Nepal.
-                </p>
-            </div>
-            
-            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-                <!-- Testimonial 1 -->
-                <div class="testimonial-card bg-gray-50 p-6 rounded-lg transition duration-300">
-                    <div class="flex items-center mb-4">
-                        <div class="text-yellow-400 text-xl mr-2">
-                            <i class="fas fa-star"></i>
-                            <i class="fas fa-star"></i>
-                            <i class="fas fa-star"></i>
-                            <i class="fas fa-star"></i>
-                            <i class="fas fa-star"></i>
-                        </div>
-                    </div>
-                    <p class="text-dark italic mb-6">
-                        ""I needed urgent help with my website late on a Sunday night. PTC Nepal responded within 30 minutes and quickly resolved the issue. Their team was professional, knowledgeable, and ensured everything was running smoothly before finishing. Highly recommend their services!"
-                    </p>
-                    <div class="flex items-center">
-                        <div class="w-12 h-12 rounded-full overflow-hidden mr-4">
-                            <img src="https://randomuser.me/api/portraits/men/32.jpg" alt="Ramraja Bastakoti" class="w-full h-full object-cover">
-                        </div>
-                        <div>
-                            <h4 class="font-semibold text-secondary">Dipak Dhungana</h4>
-                            <p class="text-sm text-gray-600">Sathikocafe.com.np</p>
-                        </div>
-                    </div>
-                </div>
-                
-                <!-- Testimonial 2 -->
-                <div class="testimonial-card bg-gray-50 p-6 rounded-lg transition duration-300">
-                    <div class="flex items-center mb-4">
-                        <div class="text-yellow-400 text-xl mr-2">
-                            <i class="fas fa-star"></i>
-                            <i class="fas fa-star"></i>
-                            <i class="fas fa-star"></i>
-                            <i class="fas fa-star"></i>
-                            <i class="fas fa-star"></i>
-                        </div>
-                    </div>
-                    <p class="text-dark italic mb-6">
-"From the initial consultation to the final deliverable, the service was outstanding. PTC Nepal revamped my website and took the time to explain all the options available. The pricing was fair, and the work was completed on time. I will definitely work with them again."
-                    </p>
-                    <div class="flex items-center">
-                        <div class="w-12 h-12 rounded-full overflow-hidden mr-4">
-                            <img src="https://randomuser.me/api/portraits/women/44.jpg" alt="Bishnu Yadav" class="w-full h-full object-cover">
-                        </div>
-                        <div>
-                            <h4 class="font-semibold text-secondary">Mukesh Sahani</h4>
-                            <p class="text-sm text-gray-600">Pokharaauto.com.np</p>
-                        </div>
-                    </div>
-                </div>
-                
-                <!-- Testimonial 3 -->
-                <div class="testimonial-card bg-gray-50 p-6 rounded-lg transition duration-300">
-                    <div class="flex items-center mb-4">
-                        <div class="text-yellow-400 text-xl mr-2">
-                            <i class="fas fa-star"></i>
-                            <i class="fas fa-star"></i>
-                            <i class="fas fa-star"></i>
-                            <i class="fas fa-star"></i>
-                            <i class="fas fa-star"></i>
-                        </div>
-                    </div>
-                    <p class="text-dark italic mb-6">
-"As a web development manager, I've worked with many agencies over the years. PTC Nepal stands out for their reliability, professionalism, and fair pricing. They've handled everything from urgent website fixes to complete redesigns for my business."
-
-                    </p>
-                    <div class="flex items-center">
-                        <div class="w-12 h-12 rounded-full overflow-hidden mr-4">
-                            <img src="https://randomuser.me/api/portraits/men/68.jpg" alt="Mahesh Shrestha" class="w-full h-full object-cover">
-                        </div>
-                        <div>
-                            <h4 class="font-semibold text-secondary">Ramesh Baral</h4>
-                            <p class="text-sm text-gray-600">apollodentalcare.com.np</p>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            
-            <div class="text-center mt-12">
-                <a href="https://www.google.com/search?q=PTC+Nepal+reviews" target="_blank" rel="noopener noreferrer" class="text-accent font-semibold hover:underline transition inline-flex items-center tap-target">
-                    Read more reviews on Google <i class="fas fa-external-link-alt ml-2"></i>
-                </a>
-            </div>
-        </div>
-    </section>
-
-    <!-- Emergency Banner -->
-    <section class="bg-accent text-white py-6">
-        <div class="container mx-auto px-4">
-            <div class="flex flex-col md:flex-row justify-between items-center">
-                <div class="flex items-center mb-4 md:mb-0">
-                    <div class="text-3xl mr-4">
-                        <i class="fas fa-exclamation-triangle"></i>
-                    </div>
-                    <div>
-                        <h3 class="text-xl font-bold">Need Our Service Immedeatly?</h3>
-                        <p>We're available 24/7 for emergency calls</p>
-                    </div>
-                </div>
-                <div>
-                    <a href="tel:+9779856020179" class="bg-white hover:bg-gray-100 text-accent px-6 py-3 rounded-lg text-lg font-semibold transition flex items-center tap-target">
-                        <i class="fas fa-phone mr-2"></i> Call Now: +977 9856020179
-                    </a>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Contact Section -->
-    <section id="contact" class="py-16 bg-gray-50">
-        <div class="container mx-auto px-4">
-            <div class="text-center mb-12">
-                <h2 class="text-3xl md:text-4xl font-bold mb-4 text-secondary">Contact Us</h2>
-                <div class="w-20 h-1 bg-accent mx-auto mb-6"></div>
-                <p class="text-lg text-dark max-w-3xl mx-auto">
-                    Have questions or need service? Fill out the form below or give us a call. We'll respond promptly.
-                </p>
-            </div>
-            
-            <div class="flex flex-col lg:flex-row gap-12">
-                <div class="lg:w-1/2">
-                    <form id="contactForm" class="bg-white p-8 rounded-lg shadow-md">
-                        <div class="mb-6">
-                            <label for="name" class="block text-dark font-medium mb-2">Your Name*</label>
-                            <input type="text" id="name" name="name" required 
-                                   class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary focus:border-transparent">
-                        </div>
-                        
-                        <div class="mb-6">
-                            <label for="email" class="block text-dark font-medium mb-2">Email*</label>
-                            <input type="email" id="email" name="email" required 
-                                   class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary focus:border-transparent">
-                        </div>
-                        
-                        <div class="mb-6">
-                            <label for="phone" class="block text-dark font-medium mb-2">Phone Number*</label>
-                            <input type="tel" id="phone" name="phone" required 
-                                   class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary focus:border-transparent">
-                        </div>
-                        
-                        <div class="mb-6">
-                            <label for="service" class="block text-dark font-medium mb-2">Service Needed</label>
-                            <select id="service" name="service" 
-                                    class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary focus:border-transparent">
-                                <option value="">Select a service...</option>
-                                <option value="emergency">Domain Registration</option>
-                                <option value="drain">Website Development</option>
-                                <option value="water-heater">Mobile App Development</option>
-                                <option value="toilet">Server Setup</option>
-                                <option value="pipe">Redesign for website</option>
-                                <option value="bathroom">SSL Certificate</option>
-                                <option value="other">Social Medai Managent</option>
-                            </select>
-                        </div>
-                        
-                        <div class="mb-6">
-                            <label for="message" class="block text-dark font-medium mb-2">Message*</label>
-                            <textarea id="message" name="message" rows="4" required 
-                                      class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary focus:border-transparent"></textarea>
-                        </div>
-                        
-                        <button type="submit" class="w-full bg-primary hover:bg-blue-700 text-white px-6 py-3 rounded-lg text-lg font-semibold transition tap-target">
-                            Send Message
-                        </button>
-                    </form>
-                </div>
-                
-                <div class="lg:w-1/2">
-                    <div class="h-full flex flex-col justify-between">
-                        <div class="bg-white p-8 rounded-lg shadow-md mb-8">
-                            <h3 class="text-xl font-bold mb-4 text-accent">Our Information</h3>
-                            
-                            <div class="space-y-6">
-                                <div class="flex items-start">
-                                    <div class="text-primary text-xl mr-4">
-                                        <i class="fas fa-map-marker-alt"></i>
-                                    </div>
-                                    <div>
-                                        <h4 class="font-semibold text-dark">Office Address</h4>
-                                        <p class="text-gray-600">Pokhara-26, Baraldanda, Kaski, Nepal</p>
-                                    </div>
-                                </div>
-                                
-                                <div class="flex items-start">
-                                    <div class="text-primary text-xl mr-4">
-                                        <i class="fas fa-phone-alt"></i>
-                                    </div>
-                                    <div>
-                                        <h4 class="font-semibold text-dark">Phone</h4>
-                                        <p class="text-gray-600">+977 9856020179 (24/7 Emergency Line)</p>
-                                        <p class="text-gray-600">+977 061 411669 / 779 / 889 (Business Hours)</p>
-                                    </div>
-                                </div>
-                                
-                                <div class="flex items-start">
-                                    <div class="text-primary text-xl mr-4">
-                                        <i class="fas fa-envelope"></i>
-                                    </div>
-                                    <div>
-                                        <h4 class="font-semibold text-dark">Email</h4>
-                                        <p class="text-gray-600">info@ptcnepal.com.np</p>
-                                    </div>
-                                </div>
-                                
-                                <div class="flex items-start">
-                                    <div class="text-primary text-xl mr-4">
-                                        <i class="fas fa-clock"></i>
-                                    </div>
-                                    <div>
-                                        <h4 class="font-semibold text-dark">Hours</h4>
-                                        <p class="text-gray-600">Office: Monday-Friday, 7am-7pm</p>
-                                        <p class="text-gray-600">Emergency Services: 24/7</p>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        
-                        <div class="bg-white p-8 rounded-lg shadow-md">
-                            <h3 class="text-xl font-bold mb-4 text-secondary">Service Area</h3>
-                            <p class="mb-4 text-dark">We proudly serve all of Pokhara and surrounding areas including:</p>
-                            
-                            <div class="grid grid-cols-2 gap-4">
-                                <div>
-                                    <ul class="space-y-2 text-gray-600">
-                                        <li><i class="fas fa-check-circle text-green-500 mr-2"></i> Pokhara</li>
-                                        <li><i class="fas fa-check-circle text-green-500 mr-2"></i> Baglung</li>
-                                        <li><i class="fas fa-check-circle text-green-500 mr-2"></i> Waling</li>
-                                        <li><i class="fas fa-check-circle text-green-500 mr-2"></i> Dumre</li>
-                                    </ul>
-                                </div>
-                                <div>
-                                    <ul class="space-y-2 text-accent-600">
-                                        <li><i class="fas fa-check-circle text-green-500 mr-2"></i> Chitwan</li>
-                                        <li><i class="fas fa-check-circle text-green-500 mr-2"></i> Butwal</li>
-                                        <li><i class="fas fa-check-circle text-green-500 mr-2"></i> Birgunj</li>
-                                        <li><i class="fas fa-check-circle text-green-500 mr-2"></i> Gorkha</li>
-                                    </ul>
-                                </div>
-                            </div>
-                            
-                            <p class="mt-4 text-accent">Call to inquire about service for your specific requirement.</p>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Footer -->
-    <footer class="bg-secondary text-white py-12">
-        <div class="container mx-auto px-4">
-            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
-                <div>
-                    <h3 class="text-xl font-bold mb-4">PTC Nepal Pvt. Ltd.</h3>
-                    <p class="mb-4">
-                        Your trusted IT partner in Pokhara and surroundings areas for over 12 years.
-                    </p>
-                    <div class="flex space-x-4">
-                        <a href="https://facebook.com" target="_blank" rel="noopener noreferrer" class="text-white hover:text-accent transition tap-target">
-                            <i class="fab fa-facebook-f text-xl"></i>
-                        </a>
-                        <a href="https://twitter.com" target="_blank" rel="noopener noreferrer" class="text-white hover:text-accent transition tap-target">
-                            <i class="fab fa-twitter text-xl"></i>
-                        </a>
-                        <a href="https://instagram.com" target="_blank" rel="noopener noreferrer" class="text-white hover:text-accent transition tap-target">
-                            <i class="fab fa-instagram text-xl"></i>
-                        </a>
-                        <a href="https://linkedin.com" target="_blank" rel="noopener noreferrer" class="text-white hover:text-accent transition tap-target">
-                            <i class="fab fa-linkedin-in text-xl"></i>
-                        </a>
-                    </div>
-                </div>
-                
-                <div>
-                    <h3 class="text-xl font-bold mb-4">Quick Links</h3>
-                    <ul class="space-y-2">
-                        <li><a href="#" class="hover:text-accent transition tap-target">Home</a></li>
-                        <li><a href="#services" class="hover:text-accent transition tap-target">Services</a></li>
-                        <li><a href="#about" class="hover:text-accent transition tap-target">About Us</a></li>
-                        <li><a href="#testimonials" class="hover:text-accent transition tap-target">Testimonials</a></li>
-                        <li><a href="#contact" class="hover:text-accent transition tap-target">Contact</a></li>
-                    </ul>
-                </div>
-                
-                <div>
-                    <h3 class="text-xl font-bold mb-4">Services</h3>
-                    <ul class="space-y-2">
-                        <li><a href="domain-registration.html" class="hover:text-accent transition tap-target">Domain Registration</a></li>
-                        <li><a href="website-development.html" class="hover:text-accent transition tap-target">Website Development</a></li>
-                        <li><a href="mobile-app-development.html" class="hover:text-accent transition tap-target">Mobile App Development</a></li>
-                        <li><a href="server-management.html" class="hover:text-accent transition tap-target">Server Management</a></li>
-                        <li><a href="social-media-management" class="hover:text-accent transition tap-target">Social Media Management</a></li>
-                    </ul>
-                </div>
-                
-                <div>
-                    <h3 class="text-xl font-bold mb-4">Contact Info</h3>
-                    <address class="not-italic">
-                        <p class="mb-2">Baraldanda-26, Pokhara</p>
-                        <p class="mb-2">1500 mtrs from Budibazar-Chowk</p>
-                        <p class="mb-4">
-                            <a href="tel:+9779856020179" class="hover:text-accent transition tap-target">+977 9856020179</a>
-                        </p>
-                        <p>
-                            <a href="mailto:info@ptcnepal.com.np" class="hover:text-accent transition tap-target">info@ptcnepal.com.np</a>
-                        </p>
-                    </address>
-                </div>
-            </div>
-            
-            <div class="border-t border-gray-700 mt-12 pt-6 text-center">
-                <p>&copy; <span id="currentYear"></span> PTC Nepal Pvt.Ltd. All Rights Reserved.</p>
-                <div class="mt-4 text-sm">
-                    <a href="privacy-policy.html" class="hover:text-accent transition mr-4 tap-target">Privacy Policy</a>
-                    <a href="terms-of-service.html" class="hover:text-accent transition mr-4 tap-target">Terms of Service</a>
-                    <a href="sitemap.html" class="hover:text-accent transition tap-target">Sitemap</a>
-                </div>
-                        <div class="border-t border-gray-600 mt-10 pt-6 text-center text-gray-600">Developed by:  <a href="https://ptcnepal.com.np" class="text-accent hover:underline"> PTC Nepal</a></p>
-
-            </div>
-        </div>
-    </footer>
-
-    <!-- Floating CTA -->
-    <div id="floating-cta" class="fixed bottom-6 right-6 z-50">
-        <a href="tel:+9779856020179" class="bg-green-500 hover:bg-accent text-white rounded-full p-4 shadow-lg transition flex items-center justify-center animate-bounce tap-target" aria-label="Call Now">
-            <i class="fas fa-phone text-xl"></i>
-        </a>
+  <header class="header">
+    <div class="logo">
+      <img src="https://ik.imagekit.io/70al5xvi0/logo.jpg?updatedAt=1751367294161" alt="PTC Nepal Logo">
+      <span>PTC Nepal</span>
     </div>
+    <nav class="nav">
+      <span class="nav-item active" data-target="home">Home</span>
+      <span class="nav-item" data-target="about">About</span>
+      <span class="nav-item" data-target="product">Product</span>
+      <span class="nav-item" data-target="testimonial">Testimonial</span>
+      <span class="nav-item" data-target="reviews">Reviews</span>
+    </nav>
+    <button class="contact-btn" id="contactBtn">Contact Us</button>
+  </header>
 
-    <script>
-        // Mobile menu toggle
-        const menuToggle = document.getElementById('menu-toggle');
-        const mobileMenu = document.getElementById('mobile-menu');
-        
-        menuToggle.addEventListener('click', () => {
-            mobileMenu.classList.toggle('open');
-            // Change icon based on menu state
-            const icon = menuToggle.querySelector('i');
-            if (mobileMenu.classList.contains('open')) {
-                icon.classList.remove('fa-bars');
-                icon.classList.add('fa-times');
-            } else {
-                icon.classList.remove('fa-times');
-                icon.classList.add('fa-bars');
-            }
-        });
-        
-        // Close mobile menu when clicking a link
-        const mobileLinks = mobileMenu.querySelectorAll('a');
-        mobileLinks.forEach(link => {
-            link.addEventListener('click', () => {
-                mobileMenu.classList.remove('open');
-                menuToggle.querySelector('i').classList.remove('fa-times');
-                menuToggle.querySelector('i').classList.add('fa-bars');
+  <main class="hero">
+    <div class="hero-content">
+      <!-- leaves -->
+      <div class="leaves-container">
+        <model-viewer class="leaf l1" src="https://api.getlayers.ai/storage/v1/object/public/public/assets/soda-14ff8a788d/leaves.glb" environment-image="neutral" exposure="1.0" interaction-prompt="none" camera-orbit="45deg 75deg 105%"></model-viewer>
+        <model-viewer class="leaf l2" src="https://api.getlayers.ai/storage/v1/object/public/public/assets/soda-14ff8a788d/leaves.glb" environment-image="neutral" exposure="1.0" interaction-prompt="none" camera-orbit="-30deg 60deg 105%"></model-viewer>
+        <model-viewer class="leaf l3" src="https://api.getlayers.ai/storage/v1/object/public/public/assets/soda-14ff8a788d/leaves.glb" environment-image="neutral" exposure="1.0" interaction-prompt="none" camera-orbit="120deg 85deg 105%"></model-viewer>
+        <model-viewer class="leaf l4" src="https://api.getlayers.ai/storage/v1/object/public/public/assets/soda-14ff8a788d/leaves.glb" environment-image="neutral" exposure="1.0" interaction-prompt="none" camera-orbit="10deg 45deg 105%"></model-viewer>
+      </div>
+
+      <!-- left -->
+      <div class="hero-left">
+        <h1 class="main-title"><span class="outline">Digital</span><br>Creator</h1>
+        <p class="description">Professional website development Services from Pokhara <br> — — — — — — <br> Building stunning, responsive website and mobile app that grows your brand.</p>
+        <div class="cta-group"><button class="primary-btn" id="callBtn">Call Us <span class="plus-icon">+</span></button></div>
+        <div class="award-badge">
+          <div class="award-icon"><svg width="24" height="24" viewBox="0 0 24 24" fill="none"><path d="M12 15L15 18L19 14" stroke="currentColor" stroke-width="2"/><path d="M7 10L12 15L17 10" stroke="currentColor" stroke-width="2"/></svg></div>
+          <div><span class="award-title">DESIGN AWARDS</span><div class="award-subtitle">PREMIUM Website Creator</div></div>
+        </div>
+      </div>
+
+      <!-- berries bg -->
+      <div class="berries-container-bg">
+        <model-viewer class="berry b7" src="https://api.getlayers.ai/storage/v1/object/public/public/assets/soda-14ff8a788d/cherry.glb" environment-image="neutral" exposure="1.0" interaction-prompt="none" camera-orbit="-20deg 110deg 105%"></model-viewer>
+        <model-viewer class="berry b8" src="https://api.getlayers.ai/storage/v1/object/public/public/assets/soda-14ff8a788d/cherry.glb" environment-image="neutral" exposure="1.0" interaction-prompt="none" camera-orbit="160deg 45deg 105%"></model-viewer>
+        <model-viewer class="berry b9" src="https://api.getlayers.ai/storage/v1/object/public/public/assets/soda-14ff8a788d/cherry.glb" environment-image="neutral" exposure="1.0" interaction-prompt="none" camera-orbit="45deg 20deg 105%"></model-viewer>
+      </div>
+
+      <!-- center 3D product -->
+      <div class="hero-center">
+        <model-viewer id="product-model" src="https://api.getlayers.ai/storage/v1/object/public/public/assets/soda-14ff8a788d/deit_soda2.glb" alt="Diet Soda 3D Model" camera-controls disable-zoom shadow-intensity="0" environment-image="neutral" exposure="1.5" interaction-prompt="none" camera-orbit="0deg 90deg 380%" field-of-view="30deg" class="main-product-3d"></model-viewer>
+      </div>
+
+      <!-- berries fg -->
+      <div class="berries-container">
+        <model-viewer class="berry b1" src="https://api.getlayers.ai/storage/v1/object/public/public/assets/soda-14ff8a788d/cherry.glb" environment-image="neutral" exposure="1.2" interaction-prompt="none" camera-orbit="45deg 120deg 105%"></model-viewer>
+        <model-viewer class="berry b2" src="https://api.getlayers.ai/storage/v1/object/public/public/assets/soda-14ff8a788d/cherry.glb" environment-image="neutral" exposure="1.2" interaction-prompt="none" camera-orbit="-120deg 45deg 105%"></model-viewer>
+        <model-viewer class="berry b3" src="https://api.getlayers.ai/storage/v1/object/public/public/assets/soda-14ff8a788d/cherry.glb" environment-image="neutral" exposure="1.2" interaction-prompt="none" camera-orbit="200deg 90deg 105%"></model-viewer>
+        <model-viewer class="berry b4" src="https://api.getlayers.ai/storage/v1/object/public/public/assets/soda-14ff8a788d/cherry.glb" environment-image="neutral" exposure="1.2" interaction-prompt="none" camera-orbit="10deg 20deg 105%"></model-viewer>
+        <model-viewer class="berry b5" src="https://api.getlayers.ai/storage/v1/object/public/public/assets/soda-14ff8a788d/cherry.glb" environment-image="neutral" exposure="1.2" interaction-prompt="none" camera-orbit="-45deg 160deg 105%"></model-viewer>
+        <model-viewer class="berry b6" src="https://api.getlayers.ai/storage/v1/object/public/public/assets/soda-14ff8a788d/cherry.glb" environment-image="neutral" exposure="1.2" interaction-prompt="none" camera-orbit="80deg 75deg 105%"></model-viewer>
+      </div>
+
+      <!-- right -->
+      <div class="hero-right">
+        <div class="product-carousel">
+          <div class="carousel-cards">
+            <div class="card active" data-flavor="classic">
+              <img src="https://api.getlayers.ai/storage/v1/object/public/public/assets/soda-14ff8a788d/Green%20Soda.png" alt="Web">
+              <div class="card-info"><span>Website Building</span><span>2999/-</span></div>
+            </div>
+            <div class="card" data-flavor="blue">
+              <img src="https://api.getlayers.ai/storage/v1/object/public/public/assets/soda-14ff8a788d/Blue%20Soda.png" alt="App" style="filter:brightness(0.7);">
+              <div class="card-info"><span>App Development</span><span>29999</span></div>
+            </div>
+          </div>
+          <div class="carousel-nav"><button class="nav-arrow" id="prevCard">←</button><button class="nav-arrow" id="nextCard">→</button></div>
+        </div>
+        <h2 class="side-title"><span class="outline">Building Digital</span><br>Trust</h2>
+      </div>
+    </div>
+  </main>
+
+  <!-- modal -->
+  <div class="modal-overlay" id="modalOverlay">
+    <div class="modal-content">
+      <h2 id="modalTitle">Welcome</h2>
+      <p id="modalDesc">Content goes here.</p>
+      <button class="modal-close" id="modalClose">Close</button>
+    </div>
+  </div>
+
+  <script>
+    // --- all buttons clickable + content ---
+    const modal = document.getElementById('modalOverlay');
+    const modalTitle = document.getElementById('modalTitle');
+    const modalDesc = document.getElementById('modalDesc');
+    const closeModal = document.getElementById('modalClose');
+
+    function showModal(title, desc) {
+      modalTitle.textContent = title;
+      modalDesc.textContent = desc;
+      modal.style.display = 'flex';
+    }
+    closeModal.addEventListener('click', ()=> modal.style.display = 'none');
+    modal.addEventListener('click', (e)=> { if(e.target===modal) modal.style.display='none'; });
+
+    // nav items
+    document.querySelectorAll('.nav-item').forEach(item => {
+      item.addEventListener('click', function() {
+        document.querySelectorAll('.nav-item').forEach(n=>n.classList.remove('active'));
+        this.classList.add('active');
+        const target = this.dataset.target;
+        const map = {
+          home: 'PTC Nepal – Digital Presence',
+          about: 'We are a team of passionate developers from Pokhara, crafting premium digital experiences.',
+          product: 'Our services: Website Development, App Development, UI/UX Design, and Digital Strategy.',
+          testimonial: '“PTC Nepal delivered an outstanding website that boosted our sales by 200%.” – Happy Client',
+          reviews: '★★★★★ 4.9/5 based on 120+ reviews. Trusted by startups and enterprises.'
+        };
+        showModal(target.charAt(0).toUpperCase()+target.slice(1), map[target] || 'Explore our work.');
+      });
+    });
+
+    // contact btn
+    document.getElementById('contactBtn').addEventListener('click', ()=> {
+      showModal('Contact Us', '📞 +977-9856020179 ✉️ hello@ptcnepal.com 🏔️ Pokhara-26, Kaski, Nepal');
+    });
+
+    // call btn
+    document.getElementById('callBtn').addEventListener('click', ()=> {
+      showModal('Call Us', '📞 +977-9856020179 \nWe are available Mon-Fri 9AM-6PM NPT.');
+    });
+
+    // card clicks
+    document.querySelectorAll('.card').forEach(card => {
+      card.addEventListener('click', function() {
+        document.querySelectorAll('.card').forEach(c=>c.classList.remove('active'));
+        this.classList.add('active');
+        const flavor = this.dataset.flavor;
+        if (flavor === 'blue') {
+          document.body.classList.add('blue-theme');
+          // switch texture
+          if (modelViewer.model && blueTexture) {
+            modelViewer.model.materials.forEach(m => {
+              if (m.pbrMetallicRoughness.baseColorTexture) m.pbrMetallicRoughness.baseColorTexture.setTexture(blueTexture);
             });
-        });
-        
-        // Smooth scrolling for anchor links with offset for fixed header
-        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-            anchor.addEventListener('click', function (e) {
-                e.preventDefault();
-                
-                const targetId = this.getAttribute('href');
-                if (targetId === '#') return;
-                
-                const targetElement = document.querySelector(targetId);
-                if (targetElement) {
-                    const headerHeight = document.querySelector('header').offsetHeight;
-                    window.scrollTo({
-                        top: targetElement.offsetTop - headerHeight,
-                        behavior: 'smooth'
-                    });
-                }
+          }
+        } else {
+          document.body.classList.remove('blue-theme');
+          if (modelViewer.model && greenTexture) {
+            modelViewer.model.materials.forEach(m => {
+              if (m.pbrMetallicRoughness.baseColorTexture) m.pbrMetallicRoughness.baseColorTexture.setTexture(greenTexture);
             });
-        });
-        
-        // Form submission
-        const contactForm = document.getElementById('contactForm');
-        if (contactForm) {
-            contactForm.addEventListener('submit', function(e) {
-                e.preventDefault();
-                
-                // Here you would typically send the form data to your server
-                // For demonstration, we'll just show an alert
-                alert('Thank you for your message! We will contact you shortly.');
-                this.reset();
-            });
+          }
         }
-        
-        // Set current year in footer
-        document.getElementById('currentYear').textContent = new Date().getFullYear();
-        
-        // Animate floating CTA
-        const floatingCta = document.getElementById('floating-cta');
-        if (floatingCta) {
-            let isPulsing = false;
-            
-            function pulse() {
-                if (!isPulsing) {
-                    isPulsing = true;
-                    floatingCta.classList.add('animate-pulse');
-                    setTimeout(() => {
-                        floatingCta.classList.remove('animate-pulse');
-                        isPulsing = false;
-                    }, 2000);
-                }
-            }
-            
-            // Pulse every 15 seconds
-            setInterval(pulse, 15000);
-            pulse(); // Initial pulse
+        const title = flavor === 'blue' ? 'App Development' : 'Website Building';
+        const price = flavor === 'blue' ? 'Starting at 29999/-' : 'Starting at 2999/-';
+        showModal(title, `Our ${title} package includes full design, development, and deployment. ${price}`);
+      });
+    });
+
+    // carousel arrows
+    let cardIndex = 0;
+    const cardElements = document.querySelectorAll('.card');
+    document.getElementById('prevCard').addEventListener('click', ()=>{
+      cardIndex = (cardIndex - 1 + cardElements.length) % cardElements.length;
+      cardElements[cardIndex].click();
+    });
+    document.getElementById('nextCard').addEventListener('click', ()=>{
+      cardIndex = (cardIndex + 1) % cardElements.length;
+      cardElements[cardIndex].click();
+    });
+
+    // ---- 3D and background logic ----
+    const modelViewer = document.querySelector('#product-model');
+    const berriesFG = document.querySelector('.berries-container');
+    const berriesBG = document.querySelector('.berries-container-bg');
+    const leavesBG = document.querySelector('.leaves-container');
+    const allBerries = document.querySelectorAll('.berry');
+    let blueTexture = null, greenTexture = null;
+    let switchSpin = 0;
+
+    modelViewer.addEventListener('load', async () => {
+      try {
+        blueTexture = await modelViewer.createTexture('https://api.getlayers.ai/storage/v1/object/public/public/assets/soda-14ff8a788d/blue%20base%20color.jpg');
+        greenTexture = await modelViewer.createTexture('https://api.getlayers.ai/storage/v1/object/public/public/assets/soda-14ff8a788d/green%20base%20color.jpg');
+        if (modelViewer.model) {
+          const material = modelViewer.model.materials[0];
+          if (material && material.pbrMetallicRoughness.baseColorTexture) {
+            material.pbrMetallicRoughness.baseColorTexture.setTexture(greenTexture);
+          }
         }
-        
-        // Prevent zoom on input focus on mobile devices
-        document.addEventListener('DOMContentLoaded', function() {
-            if (/Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent)) {
-                document.querySelector('meta[name="viewport"]').setAttribute('content', 'width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no');
-            }
-        });
-    </script>
+      } catch(e){}
+    });
+
+    // mouse parallax
+    let mouse = { x:0, y:0, px:0, py:0 };
+    let currentMouse = { x:0, y:0 };
+    window.addEventListener('mousemove', (e)=>{
+      mouse.x = (e.clientX/window.innerWidth)-0.5;
+      mouse.y = (e.clientY/window.innerHeight)-0.5;
+      mouse.px = e.clientX;
+      mouse.py = e.clientY;
+    });
+
+    function animate() {
+      const time = Date.now() * 0.001;
+      currentMouse.x += (mouse.x - currentMouse.x) * 0.05;
+      currentMouse.y += (mouse.y - currentMouse.y) * 0.05;
+      modelViewer.cameraOrbit = `${(currentMouse.x*40)+switchSpin}deg ${90+(currentMouse.y*20)}deg 380%`;
+      berriesFG.style.transform = `translate(${currentMouse.x*60}px, ${currentMouse.y*60}px)`;
+      berriesBG.style.transform = `translate(${currentMouse.x*-30}px, ${currentMouse.y*-30}px)`;
+      leavesBG.style.transform = `translate(${currentMouse.x*-15}px, ${currentMouse.y*-15}px)`;
+
+      allBerries.forEach((berry, i) => {
+        const rect = berry.getBoundingClientRect();
+        const cx = rect.left + rect.width/2, cy = rect.top + rect.height/2;
+        const dx = mouse.px - cx, dy = mouse.py - cy;
+        const dist = Math.sqrt(dx*dx+dy*dy);
+        let targetRx=0, targetRy=0;
+        if (dist < 400) {
+          const force = (400-dist)/400;
+          targetRx = (dx/dist)*force*-80;
+          targetRy = (dy/dist)*force*-80;
+        }
+        let rx = parseFloat(berry.dataset.rx)||0, ry = parseFloat(berry.dataset.ry)||0;
+        let angle = parseFloat(berry.dataset.angle)||0;
+        let baseX = parseFloat(berry.dataset.baseX)||0, baseY = parseFloat(berry.dataset.baseY)||0;
+        rx += (targetRx - rx) * 0.1;
+        ry += (targetRy - ry) * 0.1;
+        angle += 0.2;
+        berry.dataset.rx = rx; berry.dataset.ry = ry; berry.dataset.angle = angle;
+        const dur = [5,7,6,8,5.5,6.5,9,11,10][i%9];
+        const phase = (time + i*0.7) * (Math.PI*2/dur);
+        const floatY = Math.sin(phase)*15;
+        const floatAngle = Math.cos(phase)*6;
+        berry.style.transform = `translate(calc(${rx+baseX}px), calc(${ry+baseY}px + ${floatY}px)) rotate(calc(${angle}deg + ${floatAngle}deg))`;
+      });
+
+      document.querySelectorAll('.leaf').forEach((leaf, i)=>{
+        const dur = 10+i*2;
+        const phase = (time+i*1.2)*(Math.PI*2/dur);
+        leaf.style.transform = `translate(${Math.sin(phase*0.5)*15}px, ${Math.sin(phase)*20}px) rotate(${Math.sin(phase*0.3)*15}deg)`;
+      });
+      requestAnimationFrame(animate);
+    }
+    animate();
+
+    // bubbles
+    const bc = document.getElementById('bubbles-container');
+    setInterval(()=>{
+      if(!bc) return;
+      const b = document.createElement('img');
+      b.src = 'https://api.getlayers.ai/storage/v1/object/public/public/assets/soda-14ff8a788d/bubble.png';
+      b.className = 'bubble-img';
+      const size = Math.random()*20+10+'px';
+      b.style.width = size; b.style.height = 'auto';
+      b.style.left = Math.random()*100+'%';
+      b.style.bottom = '-50px';
+      b.style.opacity = Math.random()*0.4+0.2;
+      const dur = Math.random()*6+4;
+      b.style.animation = `floatUpImg ${dur}s linear forwards`;
+      bc.appendChild(b);
+      setTimeout(()=>b.remove(), dur*1000);
+    }, 400);
+
+    // init berry data
+    allBerries.forEach(b=>{ b.dataset.rx=0; b.dataset.ry=0; b.dataset.angle=Math.random()*360; b.dataset.baseX=0; b.dataset.baseY=0; });
+  </script>
 </body>
 </html>
