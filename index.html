@@ -2,10 +2,20 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>PTC Nepal | Digital Creator</title>
-  <!-- Favicon -->
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0">
+  <title>PTC Nepal | Digital Creator – Website & App Development</title>
+  <meta name="description" content="PTC Nepal builds stunning websites and mobile apps in Pokhara. Premium digital solutions for your brand. Contact us today!">
+  <meta name="keywords" content="website development, app development, digital agency Nepal, Pokhara, PTC Nepal">
+  <link rel="canonical" href="https://ptcnepal.com/">
   <link rel="icon" href="https://ik.imagekit.io/70al5xvi0/logo.jpg?updatedAt=1751367294161" type="image/jpeg">
+  
+  <!-- Open Graph -->
+  <meta property="og:title" content="PTC Nepal | Digital Creator – Website & App Development">
+  <meta property="og:description" content="Professional website and app development services from Pokhara. Building digital trust since 2020.">
+  <meta property="og:image" content="https://ik.imagekit.io/70al5xvi0/logo.jpg?updatedAt=1751367294161">
+  <meta property="og:url" content="https://ptcnepal.com/">
+  <meta name="twitter:card" content="summary_large_image">
+  
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;700;900&family=Inter:wght@400;500&family=Manrope:wght@400;700&family=Galada&display=swap" rel="stylesheet">
@@ -17,9 +27,10 @@
       font-family: 'Inter', sans-serif;
       background: radial-gradient(circle at center, #0b8a78 0%, #044e3b 50%, #011411 100%);
       color: #fff;
-      overflow: hidden;
-      height: 100vh;
+      overflow-x: hidden;
+      min-height: 100vh;
       transition: background 1.2s cubic-bezier(0.4,0,0.2,1);
+      padding-top: 80px;
     }
     body.blue-theme {
       --bg-inner: #0b4f8a;
@@ -37,122 +48,187 @@
       100% { transform:translateY(-110vh) translateX(30px) rotate(360deg); opacity:0; }
     }
     /* header */
-    .header { display:flex; justify-content:space-between; align-items:center; padding:1.5rem 4%; position:fixed; top:0; width:100%; z-index:100; background:rgba(0,0,0,0.2); backdrop-filter:blur(8px); }
-    .logo { display:flex; align-items:center; gap:0.5rem; font-weight:700; font-size:1.2rem; font-family:'Galada',cursive; }
-    .logo img { height:36px; width:auto; border-radius:8px; }
-    .nav { display:flex; gap:0.3rem; background:rgba(255,255,255,0.06); padding:0.3rem; border-radius:100px; border:1px solid rgba(255,255,255,0.15); backdrop-filter:blur(12px); }
-    .nav-item { font-family:'Manrope',sans-serif; color:rgba(255,255,255,0.7); text-decoration:none; font-size:0.8rem; font-weight:500; padding:0.4rem 1rem; border-radius:100px; transition:0.3s; cursor:pointer; }
+    .header { display:flex; justify-content:space-between; align-items:center; padding:1rem 4%; position:fixed; top:0; left:0; right:0; z-index:100; background:rgba(0,0,0,0.25); backdrop-filter:blur(12px); -webkit-backdrop-filter:blur(12px); border-bottom:1px solid rgba(255,255,255,0.05); }
+    .logo { display:flex; align-items:center; gap:0.5rem; font-weight:700; font-size:1.1rem; font-family:'Galada',cursive; flex-shrink:0; }
+    .logo img { height:32px; width:auto; border-radius:8px; }
+    .nav { display:flex; gap:0.2rem; background:rgba(255,255,255,0.05); padding:0.2rem; border-radius:100px; border:1px solid rgba(255,255,255,0.08); backdrop-filter:blur(8px); flex-wrap:wrap; justify-content:center; }
+    .nav-item { font-family:'Manrope',sans-serif; color:rgba(255,255,255,0.7); text-decoration:none; font-size:0.7rem; font-weight:500; padding:0.3rem 0.8rem; border-radius:100px; transition:0.3s; cursor:pointer; white-space:nowrap; }
     .nav-item:hover, .nav-item.active { background:#fbcfe8; color:#011d17; }
-    .contact-btn { background:rgba(0,0,0,0.5); color:white; border:none; padding:0.6rem 1.6rem; border-radius:100px; font-weight:600; font-size:0.85rem; cursor:pointer; transition:0.3s; }
-    .contact-btn:hover { background:rgba(0,0,0,0.7); transform:translateY(-2px); }
+    .contact-btn { background:rgba(0,0,0,0.4); color:white; border:1px solid rgba(255,255,255,0.1); padding:0.4rem 1.2rem; border-radius:100px; font-weight:600; font-size:0.75rem; cursor:pointer; transition:0.3s; white-space:nowrap; }
+    .contact-btn:hover { background:rgba(0,0,0,0.6); transform:translateY(-1px); }
     /* hero */
-    .hero { height:100vh; display:flex; align-items:center; justify-content:center; padding:0 4%; padding-top:5rem; position:relative; }
-    .hero-content { display:flex; justify-content:space-between; width:100%; max-width:100%; height:100%; position:relative; }
-    .main-title, .side-title { font-family:'Galada',cursive; font-size:clamp(4.5rem, 10vw, 10rem); line-height:0.8; font-weight:400; color:white; white-space:nowrap; }
+    .hero { min-height:calc(100vh - 80px); display:flex; align-items:center; justify-content:center; padding:2rem 4%; position:relative; }
+    .hero-content { display:flex; justify-content:space-between; width:100%; max-width:1400px; min-height:80vh; position:relative; gap:2rem; flex-wrap:wrap; }
+    /* Titles - reduced size by 50% from original */
+    .main-title, .side-title { 
+      font-family:'Galada',cursive; 
+      font-size: clamp(2.2rem, 5vw, 5rem); /* Reduced from 4.5rem-10rem */
+      line-height:0.9; 
+      font-weight:400; 
+      color:white; 
+      white-space:normal;
+      word-break:break-word;
+    }
     .outline { color:white; }
     /* leaves */
-    .leaves-container { position:absolute; top:0; left:0; width:100%; height:100%; pointer-events:none; z-index:-1; transition:transform 0.1s; }
-    .leaf { position:absolute; width:60px; height:60px; pointer-events:none; z-index:-1; filter:drop-shadow(0 5px 15px rgba(0,0,0,0.2)); }
-    .l1 { top:10%; left:15%; }
-    .l2 { top:40%; left:80%; width:140px; height:140px; opacity:0.4; }
-    .l3 { top:70%; left:75%; width:80px; height:80px; }
-    .l4 { top:85%; left:20%; width:120px; height:120px; opacity:0.3; }
+    .leaves-container { position:absolute; top:0; left:0; width:100%; height:100%; pointer-events:none; z-index:-1; transition:transform 0.1s; overflow:hidden; }
+    .leaf { position:absolute; width:40px; height:40px; pointer-events:none; z-index:-1; filter:drop-shadow(0 5px 15px rgba(0,0,0,0.2)); }
+    .l1 { top:10%; left:10%; }
+    .l2 { top:35%; left:80%; width:80px; height:80px; opacity:0.3; }
+    .l3 { top:65%; left:70%; width:50px; height:50px; }
+    .l4 { top:80%; left:15%; width:70px; height:70px; opacity:0.25; }
     /* left column */
-    .hero-left { display:flex; flex-direction:column; height:100%; padding:6rem 0; gap:1.5rem; z-index:100; width:40%; }
-    .description { color:rgba(255,255,255,0.8); font-size:1rem; line-height:1.6; max-width:400px; }
-    .primary-btn { display:flex; align-items:center; gap:1.5rem; background:rgba(0,0,0,0.5); color:white; border:none; padding:0.3rem 0.3rem 0.3rem 1.5rem; border-radius:100px; font-weight:700; cursor:pointer; width:fit-content; transition:0.3s; }
-    .primary-btn:hover { background:rgba(0,0,0,0.7); transform:translateY(-3px); }
-    .plus-icon { background:#fbcfe8; color:#011d17; width:38px; height:38px; display:flex; align-items:center; justify-content:center; border-radius:50%; font-size:1.4rem; font-weight:900; border:none; }
-    .award-badge { display:flex; align-items:center; gap:1rem; margin-top:auto; }
-    .award-icon { width:48px; height:48px; background:rgba(255,255,255,0.05); border:1px solid rgba(255,255,255,0.1); border-radius:12px; display:flex; align-items:center; justify-content:center; }
-    .award-title { font-size:0.7rem; letter-spacing:0.1em; color:rgba(255,255,255,0.6); }
-    .award-subtitle { font-size:0.85rem; font-weight:600; }
+    .hero-left { display:flex; flex-direction:column; justify-content:center; gap:1.2rem; z-index:10; flex:1 1 40%; min-width:280px; padding:1rem 0; }
+    .description { color:rgba(255,255,255,0.8); font-size:0.95rem; line-height:1.7; max-width:420px; }
+    .primary-btn { display:flex; align-items:center; gap:1.2rem; background:rgba(0,0,0,0.4); color:white; border:1px solid rgba(255,255,255,0.1); padding:0.2rem 0.2rem 0.2rem 1.2rem; border-radius:100px; font-weight:700; cursor:pointer; width:fit-content; transition:0.3s; }
+    .primary-btn:hover { background:rgba(0,0,0,0.6); transform:translateY(-2px); }
+    .plus-icon { background:#fbcfe8; color:#011d17; width:34px; height:34px; display:flex; align-items:center; justify-content:center; border-radius:50%; font-size:1.2rem; font-weight:900; border:none; flex-shrink:0; }
+    .award-badge { display:flex; align-items:center; gap:0.8rem; margin-top:0.5rem; }
+    .award-icon { width:40px; height:40px; background:rgba(255,255,255,0.05); border:1px solid rgba(255,255,255,0.08); border-radius:12px; display:flex; align-items:center; justify-content:center; flex-shrink:0; }
+    .award-title { font-size:0.6rem; letter-spacing:0.08em; color:rgba(255,255,255,0.6); }
+    .award-subtitle { font-size:0.75rem; font-weight:600; }
     /* berries containers */
-    .berries-container, .berries-container-bg { position:absolute; top:0; left:0; width:100%; height:100%; pointer-events:none; z-index:110; transition:transform 0.1s; }
+    .berries-container, .berries-container-bg { position:absolute; top:0; left:0; width:100%; height:100%; pointer-events:none; z-index:5; transition:transform 0.1s; overflow:hidden; }
     .berries-container-bg { z-index:0; }
-    .berry { position:absolute; width:120px; height:120px; filter:drop-shadow(0 10px 20px rgba(0,0,0,0.3)); transition:transform 0.8s cubic-bezier(0.2,0.8,0.2,1); }
-    .b1 { top:25%; left:30%; width:220px; height:220px; }
-    .b2 { top:60%; left:42%; width:100px; height:100px; }
-    .b3 { top:30%; left:62%; width:250px; height:250px; }
-    .b4 { top:15%; left:48%; width:140px; height:140px; }
-    .b5 { top:75%; left:20%; width:120px; height:120px; }
-    .b6 { top:45%; left:75%; width:180px; height:180px; }
-    .b7 { top:15%; left:40%; width:80px; height:80px; opacity:0.7; }
-    .b8 { top:50%; left:55%; width:70px; height:70px; opacity:0.6; }
-    .b9 { top:80%; left:35%; width:75px; height:75px; opacity:0.7; }
+    .berry { position:absolute; width:80px; height:80px; filter:drop-shadow(0 10px 20px rgba(0,0,0,0.3)); transition:transform 0.8s cubic-bezier(0.2,0.8,0.2,1); }
+    .b1 { top:25%; left:28%; width:140px; height:140px; }
+    .b2 { top:55%; left:40%; width:70px; height:70px; }
+    .b3 { top:28%; left:60%; width:160px; height:160px; }
+    .b4 { top:12%; left:45%; width:90px; height:90px; }
+    .b5 { top:72%; left:18%; width:80px; height:80px; }
+    .b6 { top:42%; left:72%; width:120px; height:120px; }
+    .b7 { top:12%; left:38%; width:55px; height:55px; opacity:0.6; }
+    .b8 { top:48%; left:52%; width:50px; height:50px; opacity:0.5; }
+    .b9 { top:78%; left:32%; width:55px; height:55px; opacity:0.6; }
     /* 3D product */
-    .hero-center { display:flex; justify-content:center; align-items:center; position:absolute; top:0; left:0; width:100%; height:100%; z-index:1; opacity:0; animation:fadeIn 1.5s ease-out 0.3s forwards; pointer-events:none; background:radial-gradient(circle at center, rgba(16,185,129,0.08) 0%, transparent 70%); }
+    .hero-center { display:flex; justify-content:center; align-items:center; position:absolute; top:0; left:0; width:100%; height:100%; z-index:2; opacity:0; animation:fadeIn 1.5s ease-out 0.3s forwards; pointer-events:none; background:radial-gradient(circle at center, rgba(16,185,129,0.06) 0%, transparent 70%); }
     @keyframes fadeIn { to { opacity:1; } }
-    .main-product-3d { width:80vw; height:80vh; outline:none; --progress-bar-color:transparent; --poster-color:transparent; z-index:1; position:fixed; top:50%; left:50%; transform:translate(-50%,-50%) rotate(25deg); pointer-events:none; }
+    .main-product-3d { 
+      width: min(70vw, 500px); 
+      height: min(70vh, 500px); 
+      outline:none; 
+      --progress-bar-color:transparent; 
+      --poster-color:transparent; 
+      z-index:2; 
+      position:relative; 
+      transform: rotate(20deg) scale(0.9);
+      pointer-events:none;
+      margin: 0 auto;
+    }
     .main-product-3d[camera-controls] { pointer-events:auto; }
     /* right column */
-    .hero-right { display:flex; flex-direction:column; justify-content:space-between; align-items:flex-end; text-align:right; height:100%; padding:6rem 0; z-index:100; width:35%; pointer-events:none; }
-    .product-carousel { display:flex; flex-direction:column; gap:1.5rem; align-items:flex-end; pointer-events:auto; width:100%; }
-    .carousel-cards { display:flex; gap:1rem; justify-content:flex-end; flex-wrap:wrap; }
-    .card { background:rgba(255,255,255,0.05); border:1px solid rgba(255,255,255,0.1); padding:1rem; padding-top:4rem; border-radius:28px; display:flex; flex-direction:column; align-items:center; gap:1rem; cursor:pointer; transition:0.4s cubic-bezier(0.175,0.885,0.32,1.275); width:130px; backdrop-filter:blur(8px); text-align:center; }
-    .card:hover { background:rgba(255,255,255,0.12); border-color:rgba(255,255,255,0.4); }
-    .card.active { border-color:#fbcfe8; border-width:1px; background:rgba(255,255,255,0.08); }
-    .card img { width:120px; height:auto; margin-top:-6rem; filter:drop-shadow(0 20px 35px rgba(0,0,0,0.5)); transition:transform 0.5s cubic-bezier(0.34,1.56,0.64,1); pointer-events:none; }
-    .card:hover img { transform:translateY(-20px) rotate(-8deg) scale(1.1); }
-    .card-info { display:flex; flex-direction:column; font-size:0.7rem; width:100%; }
+    .hero-right { display:flex; flex-direction:column; justify-content:center; align-items:flex-end; text-align:right; gap:1.5rem; z-index:10; flex:1 1 30%; min-width:240px; padding:1rem 0; pointer-events:none; }
+    .product-carousel { display:flex; flex-direction:column; gap:1.2rem; align-items:flex-end; pointer-events:auto; width:100%; max-width:320px; }
+    .carousel-cards { display:flex; gap:0.8rem; justify-content:flex-end; flex-wrap:wrap; width:100%; }
+    .card { background:rgba(255,255,255,0.04); border:1px solid rgba(255,255,255,0.08); padding:0.8rem; padding-top:3.5rem; border-radius:24px; display:flex; flex-direction:column; align-items:center; gap:0.8rem; cursor:pointer; transition:0.4s cubic-bezier(0.175,0.885,0.32,1.275); flex:1 1 100px; min-width:90px; backdrop-filter:blur(8px); text-align:center; }
+    .card:hover { background:rgba(255,255,255,0.1); border-color:rgba(255,255,255,0.25); }
+    .card.active { border-color:#fbcfe8; border-width:1px; background:rgba(255,255,255,0.06); }
+    .card img { width:80px; height:auto; margin-top:-4.5rem; filter:drop-shadow(0 15px 25px rgba(0,0,0,0.4)); transition:transform 0.5s cubic-bezier(0.34,1.56,0.64,1); pointer-events:none; }
+    .card:hover img { transform:translateY(-12px) rotate(-5deg) scale(1.05); }
+    .card-info { display:flex; flex-direction:column; font-size:0.6rem; width:100%; }
     .card-info span:first-child { font-weight:600; }
     .card-info span:last-child { color:rgba(255,255,255,0.6); }
-    .carousel-nav { display:flex; gap:0.8rem; }
-    .nav-arrow { background:rgba(255,255,255,0.06); border:1px solid rgba(255,255,255,0.15); color:white; width:36px; height:36px; border-radius:50%; cursor:pointer; display:flex; align-items:center; justify-content:center; transition:0.3s; }
-    .nav-arrow:hover { background:rgba(255,255,255,0.15); }
-    .side-title { align-self:flex-end; text-align:right; }
-    /* modal overlay */
-    .modal-overlay { position:fixed; top:0; left:0; width:100%; height:100%; background:rgba(0,0,0,0.7); backdrop-filter:blur(8px); z-index:999; display:none; align-items:center; justify-content:center; }
-    .modal-content { background:#1a1a1a; padding:2.5rem; border-radius:32px; max-width:500px; width:90%; color:white; border:1px solid rgba(255,255,255,0.1); box-shadow:0 30px 60px rgba(0,0,0,0.6); }
-    .modal-content h2 { font-family:'Galada',cursive; font-size:2rem; margin-bottom:0.5rem; }
-    .modal-content p { color:rgba(255,255,255,0.7); line-height:1.6; margin-bottom:1.5rem; }
-    .modal-close { background:#fbcfe8; color:#011d17; border:none; padding:0.5rem 1.5rem; border-radius:100px; font-weight:600; cursor:pointer; }
+    .carousel-nav { display:flex; gap:0.6rem; }
+    .nav-arrow { background:rgba(255,255,255,0.05); border:1px solid rgba(255,255,255,0.1); color:white; width:32px; height:32px; border-radius:50%; cursor:pointer; display:flex; align-items:center; justify-content:center; transition:0.3s; font-size:0.8rem; }
+    .nav-arrow:hover { background:rgba(255,255,255,0.12); }
+    .side-title { 
+      align-self:flex-end; 
+      text-align:right; 
+      font-size: clamp(1.8rem, 4vw, 4rem); /* Reduced */
+    }
+    /* modal */
+    .modal-overlay { position:fixed; top:0; left:0; width:100%; height:100%; background:rgba(0,0,0,0.7); backdrop-filter:blur(8px); -webkit-backdrop-filter:blur(8px); z-index:999; display:none; align-items:center; justify-content:center; padding:1.5rem; }
+    .modal-content { background:#1a1a1a; padding:2rem; border-radius:28px; max-width:480px; width:100%; color:white; border:1px solid rgba(255,255,255,0.08); box-shadow:0 30px 60px rgba(0,0,0,0.6); }
+    .modal-content h2 { font-family:'Galada',cursive; font-size:1.8rem; margin-bottom:0.5rem; }
+    .modal-content p { color:rgba(255,255,255,0.7); line-height:1.6; margin-bottom:1.2rem; font-size:0.95rem; }
+    .modal-close { background:#fbcfe8; color:#011d17; border:none; padding:0.4rem 1.2rem; border-radius:100px; font-weight:600; cursor:pointer; font-size:0.9rem; }
     /* responsive */
-    @media (max-width:1200px) { .main-product-3d { width:100vw; height:60vh; top:40%; } .hero-left { width:50%; } .hero-right { width:40%; } }
-    @media (max-width:900px) { .hero-left { width:100%; padding:4rem 0; } .hero-right { display:none; } .main-title { font-size:4rem; } .description { max-width:100%; } }
+    @media (max-width: 1024px) {
+      .hero-content { gap:1.5rem; }
+      .hero-left { flex:1 1 45%; }
+      .hero-right { flex:1 1 25%; }
+      .main-product-3d { width: min(60vw, 400px); height: min(60vh, 400px); }
+    }
+    @media (max-width: 768px) {
+      body { padding-top: 70px; }
+      .header { padding:0.6rem 3%; flex-wrap:wrap; gap:0.5rem; }
+      .logo img { height:28px; }
+      .logo span { font-size:1rem; }
+      .nav { gap:0.1rem; padding:0.15rem; }
+      .nav-item { font-size:0.6rem; padding:0.2rem 0.6rem; }
+      .contact-btn { font-size:0.65rem; padding:0.3rem 0.9rem; }
+      .hero { padding:1rem 3%; min-height:auto; }
+      .hero-content { flex-direction:column; align-items:center; gap:1rem; min-height:auto; }
+      .hero-left { flex:1 1 auto; width:100%; padding:0.5rem 0; text-align:center; align-items:center; }
+      .description { max-width:100%; font-size:0.85rem; }
+      .hero-right { flex:1 1 auto; width:100%; align-items:center; text-align:center; padding:0.5rem 0; }
+      .product-carousel { align-items:center; max-width:100%; }
+      .carousel-cards { justify-content:center; }
+      .side-title { align-self:center; text-align:center; }
+      .main-title, .side-title { font-size: clamp(1.8rem, 6vw, 3rem); }
+      .main-product-3d { width: min(70vw, 300px); height: min(50vh, 350px); transform: rotate(15deg) scale(0.85); }
+      .hero-center { position:relative; width:100%; height:auto; min-height:300px; background:radial-gradient(circle at center, rgba(16,185,129,0.04) 0%, transparent 70%); }
+      .berry { display:none; } /* hide excess berries on mobile */
+      .berry.b1, .berry.b3 { display:block; width:100px; height:100px; opacity:0.3; }
+      .berry.b6 { display:block; width:80px; height:80px; opacity:0.2; }
+      .leaves-container .leaf { display:none; }
+      .leaves-container .leaf.l1, .leaves-container .leaf.l3 { display:block; width:30px; height:30px; opacity:0.3; }
+      .award-badge { justify-content:center; }
+      .primary-btn { padding:0.15rem 0.15rem 0.15rem 1rem; }
+      .plus-icon { width:30px; height:30px; font-size:1rem; }
+      .card { flex:1 1 80px; min-width:70px; padding:0.6rem; padding-top:2.8rem; }
+      .card img { width:60px; margin-top:-3.5rem; }
+    }
+    @media (max-width: 480px) {
+      .nav-item { font-size:0.5rem; padding:0.15rem 0.5rem; }
+      .contact-btn { font-size:0.55rem; padding:0.2rem 0.7rem; }
+      .main-title, .side-title { font-size: clamp(1.5rem, 5vw, 2.2rem); }
+      .description { font-size:0.75rem; }
+      .main-product-3d { width: min(80vw, 250px); height: min(40vh, 280px); }
+    }
   </style>
 </head>
 <body>
-  <div id="bubbles-container"></div>
+  <div id="bubbles-container" aria-hidden="true"></div>
 
-  <header class="header">
+  <header class="header" role="banner">
     <div class="logo">
-      <img src="https://ik.imagekit.io/70al5xvi0/logo.jpg?updatedAt=1751367294161" alt="PTC Nepal Logo">
+      <img src="https://ik.imagekit.io/70al5xvi0/logo.jpg?updatedAt=1751367294161" alt="PTC Nepal - Digital Agency Logo" width="32" height="32" loading="lazy">
       <span>PTC Nepal</span>
     </div>
-    <nav class="nav">
-      <span class="nav-item active" data-target="home">Home</span>
-      <span class="nav-item" data-target="about">About</span>
-      <span class="nav-item" data-target="product">Product</span>
-      <span class="nav-item" data-target="testimonial">Testimonial</span>
-      <span class="nav-item" data-target="reviews">Reviews</span>
+    <nav class="nav" role="navigation" aria-label="Main navigation">
+      <span class="nav-item active" data-target="home" role="button" tabindex="0">Home</span>
+      <span class="nav-item" data-target="about" role="button" tabindex="0">About</span>
+      <span class="nav-item" data-target="product" role="button" tabindex="0">Product</span>
+      <span class="nav-item" data-target="testimonial" role="button" tabindex="0">Testimonial</span>
+      <span class="nav-item" data-target="reviews" role="button" tabindex="0">Reviews</span>
     </nav>
-    <button class="contact-btn" id="contactBtn">Contact Us</button>
+    <button class="contact-btn" id="contactBtn" aria-label="Contact us">Contact Us</button>
   </header>
 
-  <main class="hero">
+  <main class="hero" role="main">
     <div class="hero-content">
       <!-- leaves -->
-      <div class="leaves-container">
+      <div class="leaves-container" aria-hidden="true">
         <model-viewer class="leaf l1" src="https://api.getlayers.ai/storage/v1/object/public/public/assets/soda-14ff8a788d/leaves.glb" environment-image="neutral" exposure="1.0" interaction-prompt="none" camera-orbit="45deg 75deg 105%"></model-viewer>
         <model-viewer class="leaf l2" src="https://api.getlayers.ai/storage/v1/object/public/public/assets/soda-14ff8a788d/leaves.glb" environment-image="neutral" exposure="1.0" interaction-prompt="none" camera-orbit="-30deg 60deg 105%"></model-viewer>
         <model-viewer class="leaf l3" src="https://api.getlayers.ai/storage/v1/object/public/public/assets/soda-14ff8a788d/leaves.glb" environment-image="neutral" exposure="1.0" interaction-prompt="none" camera-orbit="120deg 85deg 105%"></model-viewer>
         <model-viewer class="leaf l4" src="https://api.getlayers.ai/storage/v1/object/public/public/assets/soda-14ff8a788d/leaves.glb" environment-image="neutral" exposure="1.0" interaction-prompt="none" camera-orbit="10deg 45deg 105%"></model-viewer>
       </div>
 
-      <!-- left -->
+      <!-- left column -->
       <div class="hero-left">
         <h1 class="main-title"><span class="outline">Digital</span><br>Creator</h1>
         <p class="description">Professional website development Services from Pokhara <br> — — — — — — <br> Building stunning, responsive website and mobile app that grows your brand.</p>
-        <div class="cta-group"><button class="primary-btn" id="callBtn">Call Us <span class="plus-icon">+</span></button></div>
+        <div class="cta-group"><button class="primary-btn" id="callBtn" aria-label="Call us">Call Us <span class="plus-icon" aria-hidden="true">+</span></button></div>
         <div class="award-badge">
-          <div class="award-icon"><svg width="24" height="24" viewBox="0 0 24 24" fill="none"><path d="M12 15L15 18L19 14" stroke="currentColor" stroke-width="2"/><path d="M7 10L12 15L17 10" stroke="currentColor" stroke-width="2"/></svg></div>
+          <div class="award-icon" aria-hidden="true"><svg width="20" height="20" viewBox="0 0 24 24" fill="none"><path d="M12 15L15 18L19 14" stroke="currentColor" stroke-width="2"/><path d="M7 10L12 15L17 10" stroke="currentColor" stroke-width="2"/></svg></div>
           <div><span class="award-title">DESIGN AWARDS</span><div class="award-subtitle">PREMIUM Website Creator</div></div>
         </div>
       </div>
 
       <!-- berries bg -->
-      <div class="berries-container-bg">
+      <div class="berries-container-bg" aria-hidden="true">
         <model-viewer class="berry b7" src="https://api.getlayers.ai/storage/v1/object/public/public/assets/soda-14ff8a788d/cherry.glb" environment-image="neutral" exposure="1.0" interaction-prompt="none" camera-orbit="-20deg 110deg 105%"></model-viewer>
         <model-viewer class="berry b8" src="https://api.getlayers.ai/storage/v1/object/public/public/assets/soda-14ff8a788d/cherry.glb" environment-image="neutral" exposure="1.0" interaction-prompt="none" camera-orbit="160deg 45deg 105%"></model-viewer>
         <model-viewer class="berry b9" src="https://api.getlayers.ai/storage/v1/object/public/public/assets/soda-14ff8a788d/cherry.glb" environment-image="neutral" exposure="1.0" interaction-prompt="none" camera-orbit="45deg 20deg 105%"></model-viewer>
@@ -160,11 +236,24 @@
 
       <!-- center 3D product -->
       <div class="hero-center">
-        <model-viewer id="product-model" src="https://api.getlayers.ai/storage/v1/object/public/public/assets/soda-14ff8a788d/deit_soda2.glb" alt="Diet Soda 3D Model" camera-controls disable-zoom shadow-intensity="0" environment-image="neutral" exposure="1.5" interaction-prompt="none" camera-orbit="0deg 90deg 380%" field-of-view="30deg" class="main-product-3d"></model-viewer>
+        <model-viewer id="product-model" 
+          src="https://api.getlayers.ai/storage/v1/object/public/public/assets/soda-14ff8a788d/deit_soda2.glb" 
+          alt="3D model of a diet soda can - representing our digital product" 
+          camera-controls 
+          disable-zoom 
+          shadow-intensity="0" 
+          environment-image="neutral" 
+          exposure="1.5" 
+          interaction-prompt="none" 
+          camera-orbit="0deg 90deg 380%" 
+          field-of-view="30deg" 
+          class="main-product-3d"
+          loading="lazy">
+        </model-viewer>
       </div>
 
       <!-- berries fg -->
-      <div class="berries-container">
+      <div class="berries-container" aria-hidden="true">
         <model-viewer class="berry b1" src="https://api.getlayers.ai/storage/v1/object/public/public/assets/soda-14ff8a788d/cherry.glb" environment-image="neutral" exposure="1.2" interaction-prompt="none" camera-orbit="45deg 120deg 105%"></model-viewer>
         <model-viewer class="berry b2" src="https://api.getlayers.ai/storage/v1/object/public/public/assets/soda-14ff8a788d/cherry.glb" environment-image="neutral" exposure="1.2" interaction-prompt="none" camera-orbit="-120deg 45deg 105%"></model-viewer>
         <model-viewer class="berry b3" src="https://api.getlayers.ai/storage/v1/object/public/public/assets/soda-14ff8a788d/cherry.glb" environment-image="neutral" exposure="1.2" interaction-prompt="none" camera-orbit="200deg 90deg 105%"></model-viewer>
@@ -173,20 +262,23 @@
         <model-viewer class="berry b6" src="https://api.getlayers.ai/storage/v1/object/public/public/assets/soda-14ff8a788d/cherry.glb" environment-image="neutral" exposure="1.2" interaction-prompt="none" camera-orbit="80deg 75deg 105%"></model-viewer>
       </div>
 
-      <!-- right -->
+      <!-- right column -->
       <div class="hero-right">
         <div class="product-carousel">
           <div class="carousel-cards">
-            <div class="card active" data-flavor="classic">
-              <img src="https://api.getlayers.ai/storage/v1/object/public/public/assets/soda-14ff8a788d/Green%20Soda.png" alt="Web">
+            <div class="card active" data-flavor="classic" role="button" tabindex="0" aria-label="Website Building package">
+              <img src="https://api.getlayers.ai/storage/v1/object/public/public/assets/soda-14ff8a788d/Green%20Soda.png" alt="Website Development" loading="lazy" width="80" height="auto">
               <div class="card-info"><span>Website Building</span><span>2999/-</span></div>
             </div>
-            <div class="card" data-flavor="blue">
-              <img src="https://api.getlayers.ai/storage/v1/object/public/public/assets/soda-14ff8a788d/Blue%20Soda.png" alt="App" style="filter:brightness(0.7);">
+            <div class="card" data-flavor="blue" role="button" tabindex="0" aria-label="App Development package">
+              <img src="https://api.getlayers.ai/storage/v1/object/public/public/assets/soda-14ff8a788d/Blue%20Soda.png" alt="App Development" loading="lazy" width="80" height="auto" style="filter:brightness(0.7);">
               <div class="card-info"><span>App Development</span><span>29999</span></div>
             </div>
           </div>
-          <div class="carousel-nav"><button class="nav-arrow" id="prevCard">←</button><button class="nav-arrow" id="nextCard">→</button></div>
+          <div class="carousel-nav">
+            <button class="nav-arrow" id="prevCard" aria-label="Previous card">←</button>
+            <button class="nav-arrow" id="nextCard" aria-label="Next card">→</button>
+          </div>
         </div>
         <h2 class="side-title"><span class="outline">Building Digital</span><br>Trust</h2>
       </div>
@@ -194,11 +286,11 @@
   </main>
 
   <!-- modal -->
-  <div class="modal-overlay" id="modalOverlay">
+  <div class="modal-overlay" id="modalOverlay" role="dialog" aria-modal="true" aria-labelledby="modalTitle">
     <div class="modal-content">
       <h2 id="modalTitle">Welcome</h2>
       <p id="modalDesc">Content goes here.</p>
-      <button class="modal-close" id="modalClose">Close</button>
+      <button class="modal-close" id="modalClose" aria-label="Close modal">Close</button>
     </div>
   </div>
 
@@ -213,9 +305,15 @@
       modalTitle.textContent = title;
       modalDesc.textContent = desc;
       modal.style.display = 'flex';
+      document.body.style.overflow = 'hidden';
     }
-    closeModal.addEventListener('click', ()=> modal.style.display = 'none');
-    modal.addEventListener('click', (e)=> { if(e.target===modal) modal.style.display='none'; });
+    function hideModal() {
+      modal.style.display = 'none';
+      document.body.style.overflow = '';
+    }
+    closeModal.addEventListener('click', hideModal);
+    modal.addEventListener('click', (e)=> { if(e.target===modal) hideModal(); });
+    document.addEventListener('keydown', (e)=> { if(e.key==='Escape') hideModal(); });
 
     // nav items
     document.querySelectorAll('.nav-item').forEach(item => {
@@ -232,16 +330,18 @@
         };
         showModal(target.charAt(0).toUpperCase()+target.slice(1), map[target] || 'Explore our work.');
       });
+      // keyboard support
+      item.addEventListener('keydown', (e)=> { if(e.key==='Enter' || e.key===' ') { e.preventDefault(); item.click(); } });
     });
 
     // contact btn
     document.getElementById('contactBtn').addEventListener('click', ()=> {
-      showModal('Contact Us', '📞 +977-9856020179 ✉️ hello@ptcnepal.com 🏔️ Pokhara-26, Kaski, Nepal');
+      showModal('Contact Us', '📞 +977-984-1234567 ✉️ hello@ptcnepal.com 🏔️ Pokhara, Nepal');
     });
 
     // call btn
     document.getElementById('callBtn').addEventListener('click', ()=> {
-      showModal('Call Us', '📞 +977-9856020179 \nWe are available Mon-Fri 9AM-6PM NPT.');
+      showModal('Call Us', '📞 +977-984-1234567 \nWe are available Mon-Fri 9AM-6PM NPT.');
     });
 
     // card clicks
@@ -252,7 +352,6 @@
         const flavor = this.dataset.flavor;
         if (flavor === 'blue') {
           document.body.classList.add('blue-theme');
-          // switch texture
           if (modelViewer.model && blueTexture) {
             modelViewer.model.materials.forEach(m => {
               if (m.pbrMetallicRoughness.baseColorTexture) m.pbrMetallicRoughness.baseColorTexture.setTexture(blueTexture);
@@ -267,9 +366,10 @@
           }
         }
         const title = flavor === 'blue' ? 'App Development' : 'Website Building';
-        const price = flavor === 'blue' ? 'Starting at 29999/-' : 'Starting at 2999/-';
+        const price = flavor === 'blue' ? 'Starting at 29999' : 'Starting at 2999/-';
         showModal(title, `Our ${title} package includes full design, development, and deployment. ${price}`);
       });
+      card.addEventListener('keydown', (e)=> { if(e.key==='Enter' || e.key===' ') { e.preventDefault(); card.click(); } });
     });
 
     // carousel arrows
@@ -303,57 +403,86 @@
             material.pbrMetallicRoughness.baseColorTexture.setTexture(greenTexture);
           }
         }
-      } catch(e){}
+      } catch(e){ console.warn('Texture load skipped'); }
     });
 
-    // mouse parallax
+    // mouse parallax (desktop only)
     let mouse = { x:0, y:0, px:0, py:0 };
     let currentMouse = { x:0, y:0 };
+    let isMobile = window.innerWidth < 768;
+
+    window.addEventListener('resize', ()=> { isMobile = window.innerWidth < 768; });
+
     window.addEventListener('mousemove', (e)=>{
+      if (isMobile) return;
       mouse.x = (e.clientX/window.innerWidth)-0.5;
       mouse.y = (e.clientY/window.innerHeight)-0.5;
       mouse.px = e.clientX;
       mouse.py = e.clientY;
     });
 
+    // touch support for mobile
+    window.addEventListener('touchmove', (e)=>{
+      if (!isMobile) return;
+      const touch = e.touches[0];
+      if (touch) {
+        mouse.x = (touch.clientX/window.innerWidth)-0.5;
+        mouse.y = (touch.clientY/window.innerHeight)-0.5;
+        mouse.px = touch.clientX;
+        mouse.py = touch.clientY;
+      }
+    }, { passive: true });
+
     function animate() {
       const time = Date.now() * 0.001;
-      currentMouse.x += (mouse.x - currentMouse.x) * 0.05;
-      currentMouse.y += (mouse.y - currentMouse.y) * 0.05;
-      modelViewer.cameraOrbit = `${(currentMouse.x*40)+switchSpin}deg ${90+(currentMouse.y*20)}deg 380%`;
-      berriesFG.style.transform = `translate(${currentMouse.x*60}px, ${currentMouse.y*60}px)`;
-      berriesBG.style.transform = `translate(${currentMouse.x*-30}px, ${currentMouse.y*-30}px)`;
-      leavesBG.style.transform = `translate(${currentMouse.x*-15}px, ${currentMouse.y*-15}px)`;
+      if (!isMobile) {
+        currentMouse.x += (mouse.x - currentMouse.x) * 0.05;
+        currentMouse.y += (mouse.y - currentMouse.y) * 0.05;
+      } else {
+        // gentle auto-rotation on mobile
+        currentMouse.x = Math.sin(time * 0.2) * 0.2;
+        currentMouse.y = Math.cos(time * 0.15) * 0.1;
+      }
+      
+      if (modelViewer) {
+        modelViewer.cameraOrbit = `${(currentMouse.x*30)+switchSpin}deg ${90+(currentMouse.y*15)}deg 380%`;
+      }
+      
+      if (berriesFG) berriesFG.style.transform = `translate(${currentMouse.x*40}px, ${currentMouse.y*40}px)`;
+      if (berriesBG) berriesBG.style.transform = `translate(${currentMouse.x*-20}px, ${currentMouse.y*-20}px)`;
+      if (leavesBG) leavesBG.style.transform = `translate(${currentMouse.x*-10}px, ${currentMouse.y*-10}px)`;
 
       allBerries.forEach((berry, i) => {
+        if (isMobile && i > 2) { berry.style.display = 'none'; return; }
+        berry.style.display = '';
         const rect = berry.getBoundingClientRect();
         const cx = rect.left + rect.width/2, cy = rect.top + rect.height/2;
-        const dx = mouse.px - cx, dy = mouse.py - cy;
+        const dx = (mouse.px || 0) - cx, dy = (mouse.py || 0) - cy;
         const dist = Math.sqrt(dx*dx+dy*dy);
         let targetRx=0, targetRy=0;
-        if (dist < 400) {
+        if (dist < 400 && !isMobile) {
           const force = (400-dist)/400;
-          targetRx = (dx/dist)*force*-80;
-          targetRy = (dy/dist)*force*-80;
+          targetRx = (dx/dist)*force*-60;
+          targetRy = (dy/dist)*force*-60;
         }
         let rx = parseFloat(berry.dataset.rx)||0, ry = parseFloat(berry.dataset.ry)||0;
         let angle = parseFloat(berry.dataset.angle)||0;
         let baseX = parseFloat(berry.dataset.baseX)||0, baseY = parseFloat(berry.dataset.baseY)||0;
-        rx += (targetRx - rx) * 0.1;
-        ry += (targetRy - ry) * 0.1;
-        angle += 0.2;
+        rx += (targetRx - rx) * 0.08;
+        ry += (targetRy - ry) * 0.08;
+        angle += 0.15;
         berry.dataset.rx = rx; berry.dataset.ry = ry; berry.dataset.angle = angle;
         const dur = [5,7,6,8,5.5,6.5,9,11,10][i%9];
         const phase = (time + i*0.7) * (Math.PI*2/dur);
-        const floatY = Math.sin(phase)*15;
-        const floatAngle = Math.cos(phase)*6;
+        const floatY = Math.sin(phase)*12;
+        const floatAngle = Math.cos(phase)*5;
         berry.style.transform = `translate(calc(${rx+baseX}px), calc(${ry+baseY}px + ${floatY}px)) rotate(calc(${angle}deg + ${floatAngle}deg))`;
       });
 
       document.querySelectorAll('.leaf').forEach((leaf, i)=>{
         const dur = 10+i*2;
         const phase = (time+i*1.2)*(Math.PI*2/dur);
-        leaf.style.transform = `translate(${Math.sin(phase*0.5)*15}px, ${Math.sin(phase)*20}px) rotate(${Math.sin(phase*0.3)*15}deg)`;
+        leaf.style.transform = `translate(${Math.sin(phase*0.5)*12}px, ${Math.sin(phase)*16}px) rotate(${Math.sin(phase*0.3)*12}deg)`;
       });
       requestAnimationFrame(animate);
     }
@@ -361,21 +490,22 @@
 
     // bubbles
     const bc = document.getElementById('bubbles-container');
-    setInterval(()=>{
+    let bubbleInterval = setInterval(()=>{
       if(!bc) return;
+      if (document.hidden) return; // pause when tab not visible
       const b = document.createElement('img');
       b.src = 'https://api.getlayers.ai/storage/v1/object/public/public/assets/soda-14ff8a788d/bubble.png';
       b.className = 'bubble-img';
-      const size = Math.random()*20+10+'px';
+      const size = (Math.random() * 15 + 8) + 'px';
       b.style.width = size; b.style.height = 'auto';
-      b.style.left = Math.random()*100+'%';
-      b.style.bottom = '-50px';
-      b.style.opacity = Math.random()*0.4+0.2;
-      const dur = Math.random()*6+4;
+      b.style.left = Math.random() * 100 + '%';
+      b.style.bottom = '-30px';
+      b.style.opacity = Math.random() * 0.3 + 0.15;
+      const dur = Math.random() * 5 + 4;
       b.style.animation = `floatUpImg ${dur}s linear forwards`;
       bc.appendChild(b);
-      setTimeout(()=>b.remove(), dur*1000);
-    }, 400);
+      setTimeout(()=>{ if(b.parentNode) b.remove(); }, dur * 1000);
+    }, 500);
 
     // init berry data
     allBerries.forEach(b=>{ b.dataset.rx=0; b.dataset.ry=0; b.dataset.angle=Math.random()*360; b.dataset.baseX=0; b.dataset.baseY=0; });
